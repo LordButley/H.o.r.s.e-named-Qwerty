@@ -1,4 +1,5 @@
 import random
+import time
 import gspread
 from google.oauth2.service_account import Credentials
 
@@ -24,6 +25,7 @@ print("Take a typing challenge and see how you compare to others")
 print("You have 100 seconds to type as many answers as possible")
 print("You can only make so many mistakes")
 print("Good luck!")
+
 # score_data = [0, 0, 0]
 # username = input("What is your name? ")
 
@@ -32,19 +34,19 @@ ANSWERS_ELEMENTS = ["Hydrogen", "Helium", "Lithium", "Beryllium", "Boron", "Carb
 ANSWERS_HARRY_POTTER = ["Harry", "Potter", "Ron", "Weasley", "Hermione", "Granger", "Voldemort", "Snape", "Professor", "Dumbledore", "Draco", "Malfoy", "Wand", "Owl", "Broomstick", "Philosopher", "Chamber", "Prisoner", "Azkaban", "Dementor"]
 
 class User:
-
     def __init__ (self):
         self.name = input("What is your name? ")
         self.score = 0
-        
+
 
 class Quiz:
 
-    def __init__ (self):
-        self.answers = select_theme()
-        self.lives = select_difficulty()
+    # bug2
+    def __init__(self):
+        self.answers = self.select_theme()
+        self.lives = self.select_difficulty()
 
-    def select_theme():
+    def select_theme(self):
         '''
         Function enabling user to select the theme of the typing challenge.
         '''
@@ -66,7 +68,7 @@ class Quiz:
             print(answer_set)
         return answer_set
 
-    def select_difficulty():
+    def select_difficulty(self):
         '''
         Function enabling user to select the difficulty of the game.
         '''
@@ -85,6 +87,21 @@ class Quiz:
             lives = 3
             print(lives)
         return lives
+
+# class Timer:
+#     game_over = time.time() + 100
+
+def new_game():
+    print("Start new game?: ")
+    new_game = input("Press Y for yes and N for no: ")
+    if new_game == "y":
+        new_user = User()
+        new_game = Quiz()
+        # new_timer = Timer()
+
+new_game()
+
+
 
     # def next_question():
     #     for answer in answers:
