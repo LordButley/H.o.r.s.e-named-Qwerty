@@ -31,7 +31,17 @@ ANSWERS_STAR_WARS = ["Jedi", "Lightsaber", "Skywalker", "Luke", "Leia", "Darth",
 ANSWERS_ELEMENTS = ["Hydrogen", "Helium", "Lithium", "Beryllium", "Boron", "Carbon", "Nitrogen", "Oxygen", "Fluorine", "Neon", "Sodium", "Magnesium"]
 ANSWERS_HARRY_POTTER = ["Harry", "Potter", "Ron", "Weasley", "Hermione", "Granger", "Voldemort", "Snape", "Professor", "Dumbledore", "Draco", "Malfoy", "Wand", "Owl", "Broomstick", "Philosopher", "Chamber", "Prisoner", "Azkaban", "Dementor"]
 
-def select_theme():
+
+        
+select_theme()
+
+class Quiz():
+
+    def __init__ (self, answers, lives):
+        self.answers = answers
+        self.lives = lives
+
+    def select_theme():
     '''
     Function to select the theme of the typing challenge.
     '''
@@ -41,16 +51,41 @@ def select_theme():
     # print("3 - Beer brands")
     print("3 - Periodic table of elements")
     theme_selection = input("Please enter the number of your choice: ")
+    # first bug
     if theme_selection == "1":
-        answers = random.sample(ANSWERS_STAR_WARS, 10)
-        print(answers)
+        answer_set = random.sample(ANSWERS_STAR_WARS, 10)
+        print(answer_set)
     elif theme_selection == "2":
-        answers = random.sample(ANSWERS_HARRY_POTTER, 10)
-        print(answers)
+        answer_set = random.sample(ANSWERS_HARRY_POTTER, 10)
+        print(answer_set)
     elif theme_selection == "3":
-        answers = random.sample(ANSWERS_ELEMENTS, 10)
-        print(answers)
-        
-select_theme()
+        answer_set = random.sample(ANSWERS_ELEMENTS, 10)
+        print(answer_set)
+
+    def select_difficulty():
+        print("What difficulty would you like to play?")
+        print("1 - Easy")
+        print("2 - Normal")
+        print("3 - Hard")
+        difficulty_selection = input("Please enter the number of your choice: ")
+        if difficulty_selection == "1":
+            lives = 5
+            print(lives)
+        elif difficulty_selection == "2":
+            lives = 4
+            print(lives)
+        elif difficulty_selection == "3":
+            lives = 3
+            print(lives)
+        return lives
+
+    def next_question():
+        for answer in answers:
+            print(answer)
+            x = input("Enter answer: ")
+            if answer == x:
+                correct_answer += 1
+            else:
+                lives -= 1
 
 
