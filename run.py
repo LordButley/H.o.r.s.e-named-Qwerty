@@ -88,16 +88,31 @@ class Quiz:
             print(lives)
         return lives
 
-# class Timer:
-#     game_over = time.time() + 100
+class Timer:
+
+    def __init__(self):
+        self.game_over = time.time() + 100
 
 def new_game():
     print("Start new game?: ")
-    new_game = input("Press Y for yes and N for no: ")
-    if new_game == "y":
+    start_game = input("Press Y for yes and N for no: ")
+    if start_game == "y":
         new_user = User()
         new_game = Quiz()
-        # new_timer = Timer()
+        new_timer = Timer()
+        while new_timer.game_over > time.time() and new_game.lives != 0:
+            for answer in new_game.answers:
+                print(answer)
+                x = input("Enter answer: ")
+                if answer == x:
+                    new_user.score += 1
+                    print(new_user.score)
+                else:
+                    new_game.lives -= 1  
+                    print(new_game.lives) 
+        print("gameover")        
+
+
 
 new_game()
 
@@ -105,11 +120,11 @@ new_game()
 
     # def next_question():
     #     for answer in answers:
-    #         print(answer)
-    #         x = input("Enter answer: ")
-    #         if answer == x:
-    #             correct_answer += 1
-    #         else:
-    #             lives -= 1
+            # print(answer)
+            # x = input("Enter answer: ")
+            # if answer == x:
+            #     correct_answer += 1
+            # else:
+            #     lives -= 1
 
 
