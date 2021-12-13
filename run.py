@@ -60,7 +60,6 @@ ANSWERS_HARRY_POTTER = [
 
 
 class User:
-
     '''
     Creates an instance of User
     '''
@@ -149,15 +148,14 @@ def new_game():
         answer = input("Enter answer: ")
         if answer == new_quiz.answers[x]:
             new_user.score += 1
-            print(new_user.score)
         else:
             new_quiz.lives -= 1
-            print(new_quiz.lives)
         x += 1
+        print(f"Score: {new_user.score}     Lives: {new_quiz.lives}\n")
     user_result = [new_user.name, new_user.score, new_user.difficulty]
     leaderboard.append_row(user_result)
     print("Gameover!\n")
-    print(f"{new_user.name} scored {new_user.score} on difficulty {new_user.difficulty}")
+    print(f"{new_user.name} scored {new_user.score} on difficulty {new_user.difficulty.lower()}\n")
     play_game()
 
 
