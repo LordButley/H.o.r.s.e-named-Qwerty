@@ -22,7 +22,7 @@ SHEET = GSPREAD_CLIENT.open('leaderboard')
 
 print("Welcome to Gamename")
 print("Take a typing challenge and see how you compare to others")
-print("You have 100 seconds to type as many answers as possible")
+print("You have 60 seconds to type as many answers as possible")
 print("You can only make so many mistakes")
 print("Good luck!")
 
@@ -31,7 +31,7 @@ print("Good luck!")
 
 ANSWERS_STAR_WARS = ["Jedi", "Lightsaber", "Skywalker", "Luke", "Leia", "Darth", 
                     "Vader", "Maul", "Padawan", "Obi wan", "Kenobi", "Millenium",
-                    "Falcon", "Clone", "Droid", "Palpatine", "Emporer", "Republic",
+                    "Falcon", "Clone", "Droid", "Palpatine", "Emperor", "Republic",
                     "Galaxy", "Hoth", "Endor", "Anakin", "Han Solo", "Tatooine", "Rey",
                     "Kylo Ren", "Death Star", "Stormtrooper", "Carbonite", "Greivous", "Jabba", "Master", "Dooku"]
 ANSWERS_ELEMENTS = ["Hydrogen", "Helium", "Lithium", "Beryllium", "Boron", "Carbon", "Nitrogen", "Oxygen", "Fluorine", "Neon", "Sodium", "Magnesium", "Aluminium", "Silicon", "Phosporous", "Sulfur", "Chlorine", "Argon", "Potassium", "Calcium"]
@@ -47,8 +47,11 @@ class User:
 
 
 class Quiz:
+    '''
+    Creates an instance of Quiz
+    '''
 
-    # bug2
+    # bug2 - did not use self initially
     def __init__(self):
         self.answers = self.select_theme()
         self.lives = self.select_difficulty()
@@ -60,12 +63,11 @@ class Quiz:
         print("Typing themes:")
         print("1 - Star Wars")
         print("2 - Harry Potter")
-        # print("3 - Beer brands")
         print("3 - Periodic table of elements")
         theme_selection = input("Please enter the number of your choice: ")
         # first bug - input is always a string.
         if theme_selection == "1":
-            answer_set = random.sample(ANSWERS_STAR_WARS, 10)
+            answer_set = random.sample(ANSWERS_STAR_WARS, len(ANSWERS_STAR_WARS))
             print(answer_set)
         elif theme_selection == "2":
             answer_set = random.sample(ANSWERS_HARRY_POTTER, 10)
@@ -96,13 +98,16 @@ class Quiz:
         return lives
 
 class Timer:
+    '''
+    Creates an instance of Timer
+    '''
 
     def __init__(self):
-        self.game_over = time.time() + 100
+        self.game_over = time.time() + 60
 
 def new_game():
     '''
-    Function that starts the game. It calls the classes to be constructed and runs another function which runs through the questions
+    Function which builds the game and questions. It calls the classes to be constructed and runs another function which runs through the questions
     '''
     # print("Start new game?: ")
     # start_game = input("Press Y for yes and N for no: ")
@@ -128,6 +133,9 @@ def new_game():
     play_game()        
 
 def play_game():
+    '''
+    Function which is called to play the game. It gives the user a choice as to whether they want to start. If they select yes then the game starts else they are given the option again.
+    '''
     print("Start new game?: ")
     start_game = input("Press Y for yes and N for no: ")
     if start_game == "y":
