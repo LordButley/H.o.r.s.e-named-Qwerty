@@ -13,8 +13,7 @@ CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('leaderboard')
-
-# sales = SHEET.worksheet('Sheet1')
+leaderboard = SHEET.worksheet('Sheet1')
 
 # data = sales.get_all_values()
 
@@ -113,22 +112,24 @@ def new_game():
     # start_game = input("Press Y for yes and N for no: ")
     # if start_game == "y":
     new_user = User()
-    new_game = Quiz()
+    new_quiz = Quiz()
     new_timer = Timer()
     x = 0
     # bug 3 - while loop not stopping(for loop inside of while loop)
     # bug 4 = x inside of while loop resetting to 0 everytime
-    while new_timer.game_over > time.time() and new_game.lives != 0:
-        print(new_game.answers[x])
+    while new_timer.game_over > time.time() and new_quiz.lives != 0:
+        print(new_quiz.answers[x])
         answer = input("Enter answer: ")
-        if answer == new_game.answers[x]:
+        if answer == new_quiz.answers[x]:
             new_user.score += 1
             print(new_user.score)
         else:
             new_game.lives -= 1  
-            print(new_game.lives) 
+            print(new_quiz.lives) 
         x = x + 1
-        print(f"x is {x}")      
+        print(f"x is {x}")  
+    user_result = [new_user.name, new_user.score, new_quiz.lives]
+         
     print("gameover")
     play_game()        
 
