@@ -15,18 +15,11 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('leaderboard')
 leaderboard = SHEET.worksheet('Sheet1')
 
-# data = sales.get_all_values()
-
-# print(data)
-
 print("Welcome to Gamename")
 print("Take a typing challenge and see how you compare to others")
 print("You have 60 seconds to type as many answers as possible")
 print("You can only make so many mistakes")
 print("Good luck!")
-
-# score_data = [0, 0, 0]
-# username = input("What is your name? ")
 
 ANSWERS_STAR_WARS = ["Jedi", "Lightsaber", "Skywalker", "Luke", "Leia", "Darth", 
                     "Vader", "Maul", "Padawan", "Obi wan", "Kenobi", "Millenium",
@@ -98,7 +91,7 @@ class Quiz:
 
 class Timer:
     '''
-    Creates an instance of Timer
+    Creates an instance of Timer. This calculates the time in 60 seconds.
     '''
 
     def __init__(self):
@@ -106,7 +99,8 @@ class Timer:
 
 def new_game():
     '''
-    Function which builds the game and questions. It calls the classes to be constructed and runs another function which runs through the questions
+    Function which builds the game and questions. It calls the classes to be
+    constructed and runs another function which runs through the questions
     '''
     # print("Start new game?: ")
     # start_game = input("Press Y for yes and N for no: ")
@@ -124,12 +118,12 @@ def new_game():
             new_user.score += 1
             print(new_user.score)
         else:
-            new_game.lives -= 1  
+            new_quiz.lives -= 1  
             print(new_quiz.lives) 
-        x = x + 1
+        x += 1
         print(f"x is {x}")  
     user_result = [new_user.name, new_user.score, new_quiz.lives]
-         
+    leaderboard.append_row(user_result)    
     print("gameover")
     play_game()        
 
