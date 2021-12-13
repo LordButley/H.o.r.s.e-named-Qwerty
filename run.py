@@ -29,11 +29,18 @@ print("Good luck!")
 # score_data = [0, 0, 0]
 # username = input("What is your name? ")
 
-ANSWERS_STAR_WARS = ["Jedi", "Lightsaber", "Skywalker", "Luke", "Leia", "Darth", "Vader", "Maul", "Padawan", "Obi wan", "Kenobi", "Millenium", "Falcon", "Clone", "Droid", "Palpatine", "Emporer", "Republic", "Galaxy", "Hoth", "Endor", "Anakin", "Han Solo", "Tatooine"]
-ANSWERS_ELEMENTS = ["Hydrogen", "Helium", "Lithium", "Beryllium", "Boron", "Carbon", "Nitrogen", "Oxygen", "Fluorine", "Neon", "Sodium", "Magnesium"]
-ANSWERS_HARRY_POTTER = ["Harry", "Potter", "Ron", "Weasley", "Hermione", "Granger", "Voldemort", "Snape", "Professor", "Dumbledore", "Draco", "Malfoy", "Wand", "Owl", "Broomstick", "Philosopher", "Chamber", "Prisoner", "Azkaban", "Dementor"]
+ANSWERS_STAR_WARS = ["Jedi", "Lightsaber", "Skywalker", "Luke", "Leia", "Darth", 
+                    "Vader", "Maul", "Padawan", "Obi wan", "Kenobi", "Millenium",
+                    "Falcon", "Clone", "Droid", "Palpatine", "Emporer", "Republic",
+                    "Galaxy", "Hoth", "Endor", "Anakin", "Han Solo", "Tatooine", "Rey",
+                    "Kylo Ren", "Death Star", "Stormtrooper", "Carbonite", "Greivous", "Jabba", "Master", "Dooku"]
+ANSWERS_ELEMENTS = ["Hydrogen", "Helium", "Lithium", "Beryllium", "Boron", "Carbon", "Nitrogen", "Oxygen", "Fluorine", "Neon", "Sodium", "Magnesium", "Aluminium", "Silicon", "Phosporous", "Sulfur", "Chlorine", "Argon", "Potassium", "Calcium"]
+ANSWERS_HARRY_POTTER = ["Harry", "Potter", "Ron", "Weasley", "Hermione", "Granger", "Voldemort", "Snape", "Professor", "Dumbledore", "Draco", "Malfoy", "Wand", "Owl", "Broomstick", "Philosopher", "Chamber", "Prisoner", "Azkaban", "Dementor", "Snitch", "Quidditch", "Seeker", "Hogwarts", "Lupin", "Tonks", "Whomping", "Willow", "Wizards", "Witch"]
 
 class User:
+    '''
+    Creates an instance of User
+    '''
     def __init__ (self):
         self.name = input("What is your name? ")
         self.score = 0
@@ -94,29 +101,32 @@ class Timer:
         self.game_over = time.time() + 100
 
 def new_game():
+    '''
+    Function that starts the game. It calls the classes to be constructed and runs another function which runs through the questions
+    '''
     print("Start new game?: ")
     start_game = input("Press Y for yes and N for no: ")
     if start_game == "y":
         new_user = User()
         new_game = Quiz()
         new_timer = Timer()
+        x = 0
+        #bug 3 - while loop not stopping(for loop inside of while loop)
+        # bug 4 = x inside of while loop resetting to 0 everytime
         while new_timer.game_over > time.time() and new_game.lives != 0:
-            for answer in new_game.answers:
-                print(answer)
-                x = input("Enter answer: ")
-                if answer == x:
-                    new_user.score += 1
-                    print(new_user.score)
-                else:
-                    new_game.lives -= 1  
-                    print(new_game.lives) 
+            print(new_game.answers[x])
+            answer = input("Enter answer: ")
+            if answer == new_game.answers[x]:
+                new_user.score += 1
+                print(new_user.score)
+            else:
+                new_game.lives -= 1  
+                print(new_game.lives) 
+            x = x + 1
+            print(f"x is {x}")      
         print("gameover")        
 
-
-
 new_game()
-
-
 
     # def next_question():
     #     for answer in answers:
