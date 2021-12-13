@@ -63,7 +63,7 @@ class Quiz:
         # print("3 - Beer brands")
         print("3 - Periodic table of elements")
         theme_selection = input("Please enter the number of your choice: ")
-        # first bug
+        # first bug - input is always a string.
         if theme_selection == "1":
             answer_set = random.sample(ANSWERS_STAR_WARS, 10)
             print(answer_set)
@@ -104,29 +104,38 @@ def new_game():
     '''
     Function that starts the game. It calls the classes to be constructed and runs another function which runs through the questions
     '''
+    # print("Start new game?: ")
+    # start_game = input("Press Y for yes and N for no: ")
+    # if start_game == "y":
+    new_user = User()
+    new_game = Quiz()
+    new_timer = Timer()
+    x = 0
+    # bug 3 - while loop not stopping(for loop inside of while loop)
+    # bug 4 = x inside of while loop resetting to 0 everytime
+    while new_timer.game_over > time.time() and new_game.lives != 0:
+        print(new_game.answers[x])
+        answer = input("Enter answer: ")
+        if answer == new_game.answers[x]:
+            new_user.score += 1
+            print(new_user.score)
+        else:
+            new_game.lives -= 1  
+            print(new_game.lives) 
+        x = x + 1
+        print(f"x is {x}")      
+    print("gameover")
+    play_game()        
+
+def play_game():
     print("Start new game?: ")
     start_game = input("Press Y for yes and N for no: ")
     if start_game == "y":
-        new_user = User()
-        new_game = Quiz()
-        new_timer = Timer()
-        x = 0
-        #bug 3 - while loop not stopping(for loop inside of while loop)
-        # bug 4 = x inside of while loop resetting to 0 everytime
-        while new_timer.game_over > time.time() and new_game.lives != 0:
-            print(new_game.answers[x])
-            answer = input("Enter answer: ")
-            if answer == new_game.answers[x]:
-                new_user.score += 1
-                print(new_user.score)
-            else:
-                new_game.lives -= 1  
-                print(new_game.lives) 
-            x = x + 1
-            print(f"x is {x}")      
-        print("gameover")        
+        new_game()
+    else:
+        play_game()
 
-new_game()
+play_game()
 
     # def next_question():
     #     for answer in answers:
