@@ -23,21 +23,48 @@ print("Good luck!")
 
 ANSWERS_STAR_WARS = [
     "Jedi", "Lightsaber", "Skywalker", "Luke", "Leia",
-    "Darth", "Vader", "Maul", "Padawan", "Obi wan",
+    "Darth", "Vader", "Maul", "Padawan", "Obi Wan",
     "Kenobi", "Millenium", "Falcon", "Clone", "Droid",
     "Palpatine", "Emperor", "Republic", "Galaxy", "Hoth",
     "Endor", "Anakin", "Han Solo", "Tatooine", "Rey",
     "Kylo Ren", "Death Star", "Stormtrooper", "Carbonite",
-    "Greivous", "Jabba", "Master", "Dooku"
+    "Greivous", "Jabba", "Master", "Dooku", "Mandalorian",
+    "Phantom", "Menace", "Attack", "Revenge", "Sith",
+    "Hope", "Strikes", "Back", "Return", "Awakens",
+    "C3PO", "R2D2", "Jar Jar Binks", "Squadron",
+    "Planet", "Wookie", "Chewbacca", "Xwing",
+    "Alderaan", "Dark side"
     ]
-ANSWERS_ELEMENTS = ["Hydrogen", "Helium", "Lithium", "Beryllium", "Boron", "Carbon", "Nitrogen", "Oxygen", "Fluorine", "Neon", "Sodium", "Magnesium", "Aluminium", "Silicon", "Phosporous", "Sulfur", "Chlorine", "Argon", "Potassium", "Calcium"]
-ANSWERS_HARRY_POTTER = ["Harry", "Potter", "Ron", "Weasley", "Hermione", "Granger", "Voldemort", "Snape", "Professor", "Dumbledore", "Draco", "Malfoy", "Wand", "Owl", "Broomstick", "Philosopher", "Chamber", "Prisoner", "Azkaban", "Dementor", "Snitch", "Quidditch", "Seeker", "Hogwarts", "Lupin", "Tonks", "Whomping", "Willow", "Wizards", "Witch"]
+
+ANSWERS_ELEMENTS = [
+    "Hydrogen", "Helium", "Lithium", "Beryllium",
+    "Boron", "Carbon", "Nitrogen", "Oxygen",
+    "Fluorine", "Neon", "Sodium", "Magnesium",
+    "Aluminium", "Silicon", "Phosporous", "Sulfur",
+    "Chlorine", "Argon", "Potassium", "Calcium"
+    ]
+
+ANSWERS_HARRY_POTTER = [
+    "Harry", "Potter", "Ron", "Weasley",
+    "Hermione", "Granger", "Voldemort", "Snape",
+    "Professor", "Dumbledore", "Draco", "Malfoy", "Wand",
+    "Owl", "Broomstick", "Philosopher", "Chamber",
+    "Prisoner", "Azkaban", "Dementor", "Snitch", "Quidditch",
+    "Seeker", "Hogwarts", "Lupin", "Tonks", "Whomping",
+    "Willow", "Wizards", "Witch", "Triwizard",
+    "Hagrid", "Hedwig", "Muggle", "Gryffindor",
+    "Ravenclaw", "Slytherin", "Mudblood", "Butterbeer",
+    "Hufflepuff", "Phoenix", "Diagon", "Horcrux",
+    "Lumos", "Avada Kedavra", "Crucio", "Imperio"
+    ]
+
 
 class User:
+
     '''
     Creates an instance of User
     '''
-    def __init__ (self):
+    def __init__(self):
         self.name = input("What is your name? ")
         self.score = 0
         self.difficulty = ""
@@ -65,13 +92,10 @@ class Quiz:
         # first bug - input is always a string.
         if theme_selection == "1":
             answer_set = random.sample(ANSWERS_STAR_WARS, len(ANSWERS_STAR_WARS))
-            print(answer_set)
         elif theme_selection == "2":
-            answer_set = random.sample(ANSWERS_HARRY_POTTER, 10)
-            print(answer_set)
+            answer_set = random.sample(ANSWERS_HARRY_POTTER, len(ANSWERS_HARRY_POTTER))
         elif theme_selection == "3":
-            answer_set = random.sample(ANSWERS_ELEMENTS, 10)
-            print(answer_set)
+            answer_set = random.sample(ANSWERS_ELEMENTS, len(ANSWERS_ELEMENTS))
         return answer_set
 
     def select_difficulty(self):
@@ -91,6 +115,7 @@ class Quiz:
             lives = 3
         return lives
 
+
 class Timer:
     '''
     Creates an instance of Timer. This calculates the time in 60 seconds.
@@ -99,14 +124,13 @@ class Timer:
     def __init__(self):
         self.game_over = time.time() + 60
 
+
 def new_game():
     '''
     Function which builds the game and questions. It calls the classes to be
     constructed and runs another function which runs through the questions
     '''
-    # print("Start new game?: ")
-    # start_game = input("Press Y for yes and N for no: ")
-    # if start_game == "y":
+
     new_user = User()
     new_quiz = Quiz()
     if new_quiz.lives == 5:
@@ -127,18 +151,21 @@ def new_game():
             new_user.score += 1
             print(new_user.score)
         else:
-            new_quiz.lives -= 1  
-            print(new_quiz.lives) 
+            new_quiz.lives -= 1
+            print(new_quiz.lives)
         x += 1
     user_result = [new_user.name, new_user.score, new_user.difficulty]
-    leaderboard.append_row(user_result)    
+    leaderboard.append_row(user_result)
     print("Gameover!\n")
-    print(f"{new.user.name} scored {new_user.score} on difficulty {new_user.difficulty}")
-    play_game()        
+    print(f"{new_user.name} scored {new_user.score} on difficulty {new_user.difficulty}")
+    play_game()
+
 
 def play_game():
     '''
-    Function which is called to play the game. It gives the user a choice as to whether they want to start. If they select yes then the game starts else they are given the option again.
+    Function which is called to play the game. It gives the user a choice
+    as to whether they want to start. If they select yes then the game starts
+    else they are given the option again.
     '''
     print("Start new game?: ")
     start_game = input("Press Y for yes and N for no: ")
@@ -146,5 +173,6 @@ def play_game():
         new_game()
     else:
         play_game()
+
 
 play_game()
