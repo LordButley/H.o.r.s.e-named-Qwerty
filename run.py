@@ -21,11 +21,15 @@ print("You have 60 seconds to type as many answers as possible")
 print("You can only make so many mistakes")
 print("Good luck!")
 
-ANSWERS_STAR_WARS = ["Jedi", "Lightsaber", "Skywalker", "Luke", "Leia", "Darth", 
-                    "Vader", "Maul", "Padawan", "Obi wan", "Kenobi", "Millenium",
-                    "Falcon", "Clone", "Droid", "Palpatine", "Emperor", "Republic",
-                    "Galaxy", "Hoth", "Endor", "Anakin", "Han Solo", "Tatooine", "Rey",
-                    "Kylo Ren", "Death Star", "Stormtrooper", "Carbonite", "Greivous", "Jabba", "Master", "Dooku"]
+ANSWERS_STAR_WARS = [
+    "Jedi", "Lightsaber", "Skywalker", "Luke", "Leia",
+    "Darth", "Vader", "Maul", "Padawan", "Obi wan",
+    "Kenobi", "Millenium", "Falcon", "Clone", "Droid",
+    "Palpatine", "Emperor", "Republic", "Galaxy", "Hoth",
+    "Endor", "Anakin", "Han Solo", "Tatooine", "Rey",
+    "Kylo Ren", "Death Star", "Stormtrooper", "Carbonite",
+    "Greivous", "Jabba", "Master", "Dooku"
+    ]
 ANSWERS_ELEMENTS = ["Hydrogen", "Helium", "Lithium", "Beryllium", "Boron", "Carbon", "Nitrogen", "Oxygen", "Fluorine", "Neon", "Sodium", "Magnesium", "Aluminium", "Silicon", "Phosporous", "Sulfur", "Chlorine", "Argon", "Potassium", "Calcium"]
 ANSWERS_HARRY_POTTER = ["Harry", "Potter", "Ron", "Weasley", "Hermione", "Granger", "Voldemort", "Snape", "Professor", "Dumbledore", "Draco", "Malfoy", "Wand", "Owl", "Broomstick", "Philosopher", "Chamber", "Prisoner", "Azkaban", "Dementor", "Snitch", "Quidditch", "Seeker", "Hogwarts", "Lupin", "Tonks", "Whomping", "Willow", "Wizards", "Witch"]
 
@@ -36,6 +40,7 @@ class User:
     def __init__ (self):
         self.name = input("What is your name? ")
         self.score = 0
+        self.difficulty = ""
 
 
 class Quiz:
@@ -80,13 +85,10 @@ class Quiz:
         difficulty_selection = input("Please enter the number of your choice: ")
         if difficulty_selection == "1":
             lives = 5
-            print(lives)
         elif difficulty_selection == "2":
             lives = 4
-            print(lives)
         elif difficulty_selection == "3":
             lives = 3
-            print(lives)
         return lives
 
 class Timer:
@@ -107,6 +109,13 @@ def new_game():
     # if start_game == "y":
     new_user = User()
     new_quiz = Quiz()
+    if new_quiz.lives == 5:
+        new_user.difficulty = "Easy"
+        print(new_user.difficulty)
+    elif new_quiz.lives == 4:
+        new_user.difficulty = "Normal"
+    elif new_quiz.lives == 3:
+        new_user.difficulty = "Hard"
     new_timer = Timer()
     x = 0
     # bug 3 - while loop not stopping(for loop inside of while loop)
@@ -121,10 +130,10 @@ def new_game():
             new_quiz.lives -= 1  
             print(new_quiz.lives) 
         x += 1
-        print(f"x is {x}")  
-    user_result = [new_user.name, new_user.score, new_quiz.lives]
+    user_result = [new_user.name, new_user.score, new_user.difficulty]
     leaderboard.append_row(user_result)    
-    print("gameover")
+    print("Gameover!\n")
+    print(f"{new.user.name} scored {new_user.score} on difficulty {new_user.difficulty}")
     play_game()        
 
 def play_game():
@@ -139,14 +148,3 @@ def play_game():
         play_game()
 
 play_game()
-
-    # def next_question():
-    #     for answer in answers:
-            # print(answer)
-            # x = input("Enter answer: ")
-            # if answer == x:
-            #     correct_answer += 1
-            # else:
-            #     lives -= 1
-
-
