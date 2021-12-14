@@ -66,7 +66,7 @@ class User:
     Creates an instance of User
     '''
     def __init__(self):
-        self.name = input("What is your name? ")
+        self.name = input("What is your name? \n")
         self.score = 0
         self.difficulty = ""
 
@@ -89,7 +89,7 @@ class Quiz:
         print("1 - Star Wars")
         print("2 - Harry Potter")
         print("3 - Periodic table of elements")
-        theme_selection = input("Please enter the number of your choice: ")
+        theme_selection = input("Please enter the number of your choice: \n")
         # first bug - input is always a string.
         if theme_selection == "1":
             answer_set = random.sample(ANSWERS_STAR_WARS, len(ANSWERS_STAR_WARS))
@@ -107,7 +107,7 @@ class Quiz:
         print("1 - Easy")
         print("2 - Normal")
         print("3 - Hard")
-        difficulty_selection = input("Please enter the number of your choice: ")
+        difficulty_selection = input("Please enter the number of your choice: \n")
         if difficulty_selection == "1":
             lives = 5
         elif difficulty_selection == "2":
@@ -147,7 +147,7 @@ def new_game():
     # bug 4 = x inside of while loop resetting to 0 everytime
     while new_timer.game_over > time.time() and new_quiz.lives != 0:
         print("       "+new_quiz.answers[x]+"\n")
-        answer = string.capwords(input("Enter answer: ").lower())
+        answer = string.capwords(input("Enter answer: \n").lower())
         if answer == new_quiz.answers[x]:
             new_user.score += 1
         else:
@@ -168,11 +168,15 @@ def play_game():
     else they are given the option again.
     '''
     print("Start new game?: ")
-    start_game = input("Press Y for yes and N for no: ").lower()
+    start_game = input("Press Y for yes and N for no: \n").lower()
     if start_game == "y":
         new_game()
     else:
-        play_game()
+        # print("View highscores?")
+        # if (input("Press Y for yes and N for no: ").lower()) == "y":
+            view_highscore()
+            play_game()
+    # print("Thanks for playing!")  
 
 
 def view_highscore():
@@ -181,8 +185,12 @@ def view_highscore():
     spreadsheet and splices the top 5 scores. These
     are then printed in formatted way.
     '''
-    scores = SHEET.worksheet("highscore").get_all_values()
-    highscores = scores[slice(0, 6, 1)]
-    [print(f"{highscore[0]} --- {highscore[1]} --- {highscore[2]} ") for highscore in highscores]
+    print("View highscores?")
+    if (input("Press Y for yes and N for no: \n").lower()) == "y":
+        scores = SHEET.worksheet("highscore").get_all_values()
+        highscores = scores[slice(0, 6, 1)]
+        print("\n")
+        [print(f"{highscore[0]} --- {highscore[1]} --- {highscore[2]} ") for highscore in highscores]
+        print("\n")
 
-# play_game()
+play_game()
