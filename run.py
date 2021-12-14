@@ -1,5 +1,6 @@
 import random
 import time
+import string
 import gspread
 from google.oauth2.service_account import Credentials
 
@@ -31,7 +32,7 @@ ANSWERS_STAR_WARS = [
     "Greivous", "Jabba", "Master", "Dooku", "Mandalorian",
     "Phantom", "Menace", "Attack", "Revenge", "Sith",
     "Hope", "Strikes", "Back", "Return", "Awakens",
-    "C3PO", "R2D2", "Jar Jar Binks", "Squadron",
+    "Jar Jar Binks", "Squadron", "Ewok", "Mace Windu"
     "Planet", "Wookie", "Chewbacca", "Xwing",
     "Alderaan", "Dark side"
     ]
@@ -144,8 +145,8 @@ def new_game():
     # bug 3 - while loop not stopping(for loop inside of while loop)
     # bug 4 = x inside of while loop resetting to 0 everytime
     while new_timer.game_over > time.time() and new_quiz.lives != 0:
-        print(new_quiz.answers[x])
-        answer = input("Enter answer: ")
+        print("       "+new_quiz.answers[x]+"\n")
+        answer = string.capwords(input("Enter answer: ").lower())
         if answer == new_quiz.answers[x]:
             new_user.score += 1
         else:
