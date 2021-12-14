@@ -15,6 +15,7 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('leaderboard')
 leaderboard = SHEET.worksheet('Sheet1')
+ordered_leaderboard = SHEET.worksheet("highscore")
 
 print("Welcome to Gamename")
 print("Take a typing challenge and see how you compare to others")
@@ -167,11 +168,21 @@ def play_game():
     else they are given the option again.
     '''
     print("Start new game?: ")
-    start_game = input("Press Y for yes and N for no: ")
+    start_game = input("Press Y for yes and N for no: ").lower()
     if start_game == "y":
         new_game()
     else:
         play_game()
 
 
-play_game()
+def view_highscore():
+    '''
+    Function retrieves data from an numerically ordered
+    spreadsheet and splices the top 5 scores. These
+    are then printed in formatted way.
+    '''
+    scores = SHEET.worksheet("highscore").get_all_values()
+    highscores = scores[slice(0, 6, 1)]
+    [print(f"{highscore[0]} --- {highscore[1]} --- {highscore[2]} ") for highscore in highscores]
+
+# play_game()
