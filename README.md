@@ -34,11 +34,11 @@ Happy coding!
 
 # TypeKwondo!
 
-Have you even been to Japan and seen all kinds of signs and wanted to know what they mean? Or maybe you were watching your favourite anime and saw a bunch of symbols you didn't understand but wanted to? Perhaps learning a foreign language is one of your life goals and Japanese seems the coolest but you are faced with the impenetrable barrier that is learning a new "alphabet" before you can even start?
+Welcome to TypeKwondo! 
 
-Well learning Japanese does not need to be so hard! In fact it's JapanEASY! This website is designed to help you hit the ground running by teaching you Hiragana in a fun but challenging way.
+As all developers will tell you, being able to type quickly and accurately is an invaluable skill. Not staring at your index fingers whilst trying to work out where the missing semi-colon is actually really useful.
 
-As a person who shares a love of Japan with a complete inability to learn foreign languages, I found that the only way I could progress my own learning was through gamification. This game is designed with simplicity and functionality at heart allowing focus to remain solely on learning of the syllabary whilst also being remaining fun.
+And what do developers love? Gamification! Introducing TypeKwondo, where you get to improve your typing skills, whilst competitively playing a typing game in a theme of your choosing. On top of this, you can also compare your scores with the leaderboard and try and make it into the top 5 best typers ever (*not an official title) 
 
 You can visit the live website [here](https://lordbutley.github.io/JapanEasy/)
 
