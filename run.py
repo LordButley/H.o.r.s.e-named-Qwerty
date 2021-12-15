@@ -53,6 +53,7 @@ class User:
                 break
         self.score = 0
         self.difficulty = ""
+        clear_screen()
         print(f"Hi {self.name}")
 
 
@@ -92,9 +93,9 @@ class Quiz:
                                 answers.ELEMENTS, len(answers.ELEMENTS))
                 return answer_set
             else:
+                clear_screen()
                 print(f"You have entered {theme_selection}")
                 print("Please enter the number of one of the options provided")
-
 
     def select_difficulty(self):
         '''
@@ -117,6 +118,7 @@ class Quiz:
                 lives = 1
                 return lives
             else:
+                clear_screen()
                 print(f"You have entered {difficulty_selection}")
                 print("Please enter the number of one of the options provided")
 
@@ -135,7 +137,6 @@ def new_game():
     Function which builds the game and questions. It calls the classes to be
     constructed and runs another function which runs through the questions
     '''
-
     new_user = User()
     new_quiz = Quiz()
     if new_quiz.lives == 3:
@@ -145,6 +146,11 @@ def new_game():
         new_user.difficulty = "Normal"
     elif new_quiz.lives == 1:
         new_user.difficulty = "Hard"
+    clear_screen()
+    print("You will be shown a word. Type the word into the terminal")
+    print("as fast as possible and hit enter")
+    input("The game will start when you hit enter")
+    clear_screen()
     new_timer = Timer()
     x = 0
     # bug 3 - while loop not stopping(for loop inside of while loop)
@@ -157,6 +163,7 @@ def new_game():
         else:
             new_quiz.lives -= 1
         x += 1
+        clear_screen()
         print(f"Correct: {new_user.score}     Lives: {new_quiz.lives}\n")
     new_user.score = difficulty_bonus(new_user.score, new_user.difficulty)
     user_result = [new_user.name, new_user.score, new_user.difficulty]
@@ -164,7 +171,7 @@ def new_game():
     print("Gameover!\n")
     print(
         f"{new_user.name} scored {new_user.score} \
-        on difficulty {new_user.difficulty.lower()}\n")
+on difficulty {new_user.difficulty.lower()}\n")
 
 
 def menu():
@@ -180,14 +187,17 @@ def menu():
         print("3 - Exit game")
         menu_selection = input("Please enter the number of your choice: \n")
         if menu_selection == "1":
+            clear_screen()
             new_game()
         elif menu_selection == "2":
             view_highscore()
         elif menu_selection == "3":
+            clear_screen()
             print("Thanks for playing!")
             print("Goodbye")
             return False
         else:
+            clear_screen()
             print(f"You have entered {menu_selection}")
             print("Please enter the number of one of the options provided")
 
@@ -198,9 +208,9 @@ def view_highscore():
     spreadsheet and splices the top 5 scores. These
     are then printed in formatted way.
     '''
+    clear_screen()
     scores = SHEET.worksheet("highscore").get_all_values()
     highscores = scores[slice(0, 6, 1)]
-    print("\n")
     [print(
         f"{highscore[0]} --- {highscore[1]} --- {highscore[2]} ")
         for highscore in highscores]
