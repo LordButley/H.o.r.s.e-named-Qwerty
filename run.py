@@ -2,6 +2,7 @@ import random
 import time
 import string
 import gspread
+import answers
 from google.oauth2.service_account import Credentials
 
 SCOPE = [
@@ -23,49 +24,12 @@ print("You have 60 seconds to type as many answers as possible")
 print("You can only make so many mistakes")
 print("Good luck!")
 
-ANSWERS_STAR_WARS = [
-    "Jedi", "Lightsaber", "Skywalker", "Luke", "Leia",
-    "Darth", "Vader", "Maul", "Padawan", "Obi Wan",
-    "Kenobi", "Millenium", "Falcon", "Clone", "Droid",
-    "Palpatine", "Emperor", "Republic", "Galaxy", "Hoth",
-    "Endor", "Anakin", "Han Solo", "Tatooine", "Rey",
-    "Kylo Ren", "Death Star", "Stormtrooper", "Carbonite",
-    "Greivous", "Jabba", "Master", "Dooku", "Mandalorian",
-    "Phantom", "Menace", "Attack", "Revenge", "Sith",
-    "Hope", "Strikes", "Back", "Return", "Awakens",
-    "Jar Jar Binks", "Squadron", "Ewok", "Mace Windu"
-    "Planet", "Wookie", "Chewbacca", "Xwing",
-    "Alderaan", "Dark side"
-    ]
-
-ANSWERS_ELEMENTS = [
-    "Hydrogen", "Helium", "Lithium", "Beryllium",
-    "Boron", "Carbon", "Nitrogen", "Oxygen",
-    "Fluorine", "Neon", "Sodium", "Magnesium",
-    "Aluminium", "Silicon", "Phosporous", "Sulfur",
-    "Chlorine", "Argon", "Potassium", "Calcium"
-    ]
-
-ANSWERS_HARRY_POTTER = [
-    "Harry", "Potter", "Ron", "Weasley",
-    "Hermione", "Granger", "Voldemort", "Snape",
-    "Professor", "Dumbledore", "Draco", "Malfoy", "Wand",
-    "Owl", "Broomstick", "Philosopher", "Chamber",
-    "Prisoner", "Azkaban", "Dementor", "Snitch", "Quidditch",
-    "Seeker", "Hogwarts", "Lupin", "Tonks", "Whomping",
-    "Willow", "Wizards", "Witch", "Triwizard",
-    "Hagrid", "Hedwig", "Muggle", "Gryffindor",
-    "Ravenclaw", "Slytherin", "Mudblood", "Butterbeer",
-    "Hufflepuff", "Phoenix", "Diagon", "Horcrux",
-    "Lumos", "Avada Kedavra", "Crucio", "Imperio"
-    ]
-
-
 class User:
     '''
     Creates an instance of User
     '''
     def __init__(self):
+
         self.name = input("What is your name? \n")
         self.score = 0
         self.difficulty = ""
@@ -85,19 +49,27 @@ class Quiz:
         '''
         Function enabling user to select the theme of the typing challenge.
         '''
-        print("Typing themes:")
-        print("1 - Star Wars")
-        print("2 - Harry Potter")
-        print("3 - Periodic table of elements")
-        theme_selection = input("Please enter the number of your choice: \n")
-        # first bug - input is always a string.
-        if theme_selection == "1":
-            answer_set = random.sample(ANSWERS_STAR_WARS, len(ANSWERS_STAR_WARS))
-        elif theme_selection == "2":
-            answer_set = random.sample(ANSWERS_HARRY_POTTER, len(ANSWERS_HARRY_POTTER))
-        elif theme_selection == "3":
-            answer_set = random.sample(ANSWERS_ELEMENTS, len(ANSWERS_ELEMENTS))
-        return answer_set
+        while True:
+            print("Typing themes:")
+            print("1 - Star Wars")
+            print("2 - Harry Potter")
+            print("3 - Periodic table of elements")
+            theme_selection = input("Please enter the number of your choice: \n")
+            # validate_data(theme_selection, 3)
+            # first bug - input is always a string.
+            if theme_selection == "1":
+                answer_set = random.sample(answers.STAR_WARS, len(answers.STAR_WARS))
+                return answer_set
+            elif theme_selection == "2":
+                answer_set = random.sample(answers.HARRY_POTTER, len(answers.HARRY_POTTER))
+                return answer_set
+            elif theme_selection == "3":
+                answer_set = random.sample(answers.ELEMENTS, len(answers.ELEMENTS))
+                return answer_set
+            else:
+                print("Please enter the number of one of the options provided.")
+
+            # return answer_set
 
     def select_difficulty(self):
         '''
@@ -167,16 +139,19 @@ def play_game():
     as to whether they want to start. If they select yes then the game starts
     else they are given the option again.
     '''
-    print("Start new game?: ")
-    start_game = input("Press Y for yes and N for no: \n").lower()
+    print("Please select an option: ")
+    print("1 - Start new game")
+    print("2 - View leaderboard")
+    print("3 - Exit game")
+    start_game = input("Please enter the number of your choice: \n")
     if start_game == "y":
         new_game()
     else:
         # print("View highscores?")
         # if (input("Press Y for yes and N for no: ").lower()) == "y":
-            view_highscore()
-            play_game()
-    # print("Thanks for playing!")  
+        view_highscore()
+        play_game()
+    # print("Thanks for playing!")
 
 
 def view_highscore():
@@ -193,4 +168,29 @@ def view_highscore():
         [print(f"{highscore[0]} --- {highscore[1]} --- {highscore[2]} ") for highscore in highscores]
         print("\n")
 
+
+# def validate_data(value, num_of_answers):
+#     """
+#     Function to check the validity of inputs and
+#     returns corresponding error messages.
+#     """
+#     try:
+#         int(value)
+#     except ValueError:
+#         print("Please input a number")
+#         return False
+
+#     try:
+#         if value <= 0 or value > num_of_answers:
+#             raise DataError(
+#                 f"Please enter a number between 1 and {num_of_answers}"
+#                 )
+#     except ValueError as e:        
+#             print(e)
+#             return False
+
+#     return True
+
+
 play_game()
+
