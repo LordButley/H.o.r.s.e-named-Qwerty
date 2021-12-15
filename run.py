@@ -24,16 +24,56 @@ print("You have 60 seconds to type as many answers as possible")
 print("You can only make so many mistakes")
 print("Good luck!")
 
+
 class User:
     '''
     Creates an instance of User
     '''
     def __init__(self):
 
-        self.name = input("What is your name? \n")
+        while True:
+            name = input("What is your name? \n")
+            print(f"You have entered {name}")
+            print("Is this correct?")
+            correct_name = name_check()
+            if correct_name == 1:
+                self.name = name
+                break
+            
+            # while True:
+            #     name_check = input("Press Y for yes and N for no: \n").lower()
+            #     if name_check == "y":
+            #         break
+            #     elif name_check == "n":
+            #         break
+            #     else:
+            #         print("You did not enter Y or N")
+            #         print("Please try again")
+
+
+        # self.name = input("What is your name? \n")
+        # self.name = name
+
+
         self.score = 0
         self.difficulty = ""
+        print(f"Hi {self.name}")
 
+def name_check():
+    '''
+    Function to check the validity of input of a yes/no
+    question. Contains validation internally which
+    calls the function recursively if not met.
+    '''
+    input_check = input("Press Y for yes and N for no: \n").lower()
+    if input_check == "y":
+        return 1
+    elif input_check == "n":
+        return 2
+    else:
+        print("You did not enter Y or N")
+        print("Please try again")
+        return name_check()
 
 class Quiz:
     '''
