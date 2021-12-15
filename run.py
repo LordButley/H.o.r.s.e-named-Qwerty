@@ -67,7 +67,8 @@ class Quiz:
                 answer_set = random.sample(answers.ELEMENTS, len(answers.ELEMENTS))
                 return answer_set
             else:
-                print("Please enter the number of one of the options provided.")
+                print(f"You have entered {theme_selection}")
+                print("Please enter the number of one of the options provided")
 
             # return answer_set
 
@@ -75,18 +76,25 @@ class Quiz:
         '''
         Function enabling user to select the difficulty of the game.
         '''
-        print("What difficulty would you like to play?")
-        print("1 - Easy")
-        print("2 - Normal")
-        print("3 - Hard")
-        difficulty_selection = input("Please enter the number of your choice: \n")
-        if difficulty_selection == "1":
-            lives = 5
-        elif difficulty_selection == "2":
-            lives = 4
-        elif difficulty_selection == "3":
-            lives = 3
-        return lives
+        while True:
+            print("What difficulty would you like to play?")
+            print("1 - Easy")
+            print("2 - Normal")
+            print("3 - Hard")
+            difficulty_selection = input("Please enter the number of your choice: \n")
+            if difficulty_selection == "1":
+                lives = 5
+                return lives
+            elif difficulty_selection == "2":
+                lives = 4
+                return lives
+            elif difficulty_selection == "3":
+                lives = 3
+                return lives
+            else:
+                print(f"You have entered {difficulty_selection}")
+                print("Please enter the number of one of the options provided")
+
 
 
 class Timer:
@@ -133,26 +141,38 @@ def new_game():
     play_game()
 
 
-def play_game():
+def menu():
     '''
     Function which is called to play the game. It gives the user a choice
     as to whether they want to start. If they select yes then the game starts
     else they are given the option again.
     '''
-    print("Please select an option: ")
-    print("1 - Start new game")
-    print("2 - View leaderboard")
-    print("3 - Exit game")
-    start_game = input("Please enter the number of your choice: \n")
-    if start_game == "y":
-        new_game()
-    else:
+    while True:
+        print("Please select an option: ")
+        print("1 - Start new game")
+        print("2 - View leaderboard")
+        print("3 - Exit game")
+        menu_selection = input("Please enter the number of your choice: \n")
+        if menu_selection == "1":
+            new_game()
+        elif menu_selection == "2":
+            view_highscore()
+        elif menu_selection == "3":
+            print("Thanks for playing!")
+            print("Goodbye")
+            return False
+        else:
+            print(f"You have entered {menu_selection}")
+            print("Please enter the number of one of the options provided")
+            
+
+
+
         # print("View highscores?")
         # if (input("Press Y for yes and N for no: ").lower()) == "y":
-        view_highscore()
-        play_game()
-    # print("Thanks for playing!")
-
+        # view_highscore()
+        # play_game()
+   
 
 def view_highscore():
     '''
@@ -160,13 +180,13 @@ def view_highscore():
     spreadsheet and splices the top 5 scores. These
     are then printed in formatted way.
     '''
-    print("View highscores?")
-    if (input("Press Y for yes and N for no: \n").lower()) == "y":
-        scores = SHEET.worksheet("highscore").get_all_values()
-        highscores = scores[slice(0, 6, 1)]
-        print("\n")
-        [print(f"{highscore[0]} --- {highscore[1]} --- {highscore[2]} ") for highscore in highscores]
-        print("\n")
+    # print("View highscores?")
+    # if (input("Press Y for yes and N for no: \n").lower()) == "y":
+    scores = SHEET.worksheet("highscore").get_all_values()
+    highscores = scores[slice(0, 6, 1)]
+    print("\n")
+    [print(f"{highscore[0]} --- {highscore[1]} --- {highscore[2]} ") for highscore in highscores]
+    print("\n")
 
 
 # def validate_data(value, num_of_answers):
@@ -192,5 +212,5 @@ def view_highscore():
 #     return True
 
 
-play_game()
+menu()
 
