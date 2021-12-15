@@ -30,7 +30,9 @@ ordered_leaderboard = SHEET.worksheet("highscore")
 print("Welcome to Gamename")
 print("Take a typing challenge and see how you compare to others")
 print("You have 60 seconds to type as many answers as possible")
-print("You can only make so many mistakes")
+print("Enter your name for a chance to make it onto the leaderboard")
+print("You can choose difficulty which affects lives and score")
+print("!The quiz is not case sensitive!")
 print("Good luck!")
 
 
@@ -92,7 +94,6 @@ class Quiz:
                 print(f"You have entered {theme_selection}")
                 print("Please enter the number of one of the options provided")
 
-            # return answer_set
 
     def select_difficulty(self):
         '''

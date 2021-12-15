@@ -46,46 +46,6 @@ You can visit the live website [here](https://lordbutley.github.io/JapanEasy/)
 
 # Contents
 
-- [JapanEasy!](#japaneasy-)
-- [Contents](#contents)
-- [UX](#ux)
-  * [Project Goals](#project-goals)
-  * [User Stories](#user-stories)
-  * [Target Audience](#target-audience)
-  * [Structure](#structure)
-  * [Skeleton](#skeleton)
-  * [Surface](#surface)
-    + [Imagery](#imagery)
-    + [Colour Palette](#colour-palette)
-    + [Typography](#typography)
-    + [Language / Tone](#language---tone)
-    + [Layout](#layout)
-- [Features](#features)
-  * [Existing Features](#existing-features)
-    + [Game container](#game-container)
-    + [Header](#header)
-    + [Footer](#footer)
-    + [Background](#background)
-    + [Introduction, explanation and choices](#introduction--explanation-and-choices)
-    + [Buttons](#buttons)
-    + [Quiz page](#quiz-page)
-    + [End Game page](#end-game-page)
-    + [JavaScript functionality](#javascript-functionality)
-  * [Features to implement in the future](#features-to-implement-in-the-future)
-  * [Technologies Used](#technologies-used)
-    + [Languages Used:](#languages-used-)
-    + [Frameworks, Libraries & Programs Used:](#frameworks--libraries---programs-used-)
-  * [Testing](#testing)
-  * [Deployment](#deployment)
-    + [Github Pages](#github-pages)
-      - [How I deployed my project to GitHub pages.](#how-i-deployed-my-project-to-github-pages)
-      - [Forking a GitHub Repository](#forking-a-github-repository)
-  * [Credits](#credits)
-    + [Media](#media)
-    + [Code](#code)
-    + [Content](#content)
-    + [Thanks](#thanks)
-
 # UX
 
 ## Project Goals
@@ -136,25 +96,9 @@ The initial ideas were taken from the structure planning and a visual mock up wa
 
 ### Imagery
 
-There are two images used in this website:
-
-1. "Ema" which are wooden plaques that people would write their prayers and wishes upon and hang in temples. They are as traditional as they are positive. The idea being that on your Ema, your wish is to learn Hiragana
-
-2. The quiz container uses a background image rather than a colour. This image is of a light wood similar to that of an Ema tile. This is to add depth to the page, and consistency to the overall theme and feeling.
-
 ### Colour Palette
 
-The inspiration for the colour scheme throughout came from two sources. The first is Ema will fill the background. The second is the famous red of the "rising sun" from the Japanese flag.
-
-Font colour is charcoal #444444, which represents the colour of the writing on Ema traditionally done with charcoal whilst also being friendlier on the eyes that black. 
-
-The user feedback highlighting colours is red #be0029 which has been lifted straight of the centre of a Japanese flag.
-
 ### Typography
-
-Fredoka One is used for the heading "JapanEasy". The rounded letters and thick boldness give a full feel that suits the ideology of the website that is to learn whilst having fun.
-
-The body and questions in English are in font Dongle. This was chosen to give great contrast to the title. The thinness of the font as well as the sizing were chosen to give a traditional feel and to add a touch more seriousness.
 
 ### Language / Tone
 
@@ -219,25 +163,7 @@ The header becomes underlines when hovered over.
 
 ![Screen shot of contact us form from "It's Puppy Time"](assets/images/endgame.JPG) 
 
-### JavaScript functionality
-
-The key part of this quiz is the interchangeability. A conventional quiz will have a question and 4 set associated answers, often built into an object. However this quiz differs due to the entire answer set being relevant to each question. Infact it is necessary to include the entire answer set as possible answers to enhance learning.
-
-Consequently the JavaScipt was built with this in mind as so at its heart are 2 arrays of characters. One english and the other Hiragana. All questions and answers are generated through manipulation of these two arrays. Answers are also checked through manipulation of the arrays.
-
-The difficulty and language are chosen using radio buttons, and the input is pulled through querySelectors and booleans to pull the right values.
-
-The question and answer containers are empty in the HTML file and are generated through JavaScript which allows for greater control and manipulation, especially as difficulty affects number of answers.
-
-There is only one HTML file with JavaScript being used to manipulate the diplay attribute of elements depending on what part of the quiz you are at.
-
-There are three buttons in the quiz that have three associated overarching functions relating to them. When these buttons are clicked, EventListers activate the associated functions.
-
-The answer buttons in the quiz are generated within JavaScript with onclick attributes. When an answer is chosen, a check answer function is called that adds a class depending on a boolean result which in turn colours the tile in red if incorrect and green if correct. The nextQuestion function in wrapped in a setTimeout function to pause the game and allow for the user to see if they answered correctly or incorrectly. Due to this setTimeout function an additional function was required to prevent the other answers calling their functions if clicked. As such a stopClick() function was made which loops through the buttons and removes the onclick attribute. 
-
-Event listeners were considered for these buttons but as the buttons were generated in the JavaScipt code, the best practice of having HTML and JavaScript in seperate files was still present. Additionally you would require more lines of code as you would have to loop all buttons once created to add the eventListeners and then loop again to remove it.
-
-One other reason behind using arrays as opposed to objects for my quiz is that I can add in Katakana with ease and speed.
+### Python functionality
 
 ## Features to implement in the future
 
@@ -247,14 +173,8 @@ One other reason behind using arrays as opposed to objects for my quiz is that I
 
  ### Languages Used:
 
- 1. [HTML](https://en.wikipedia.org/wiki/HTML) 
- - Programming language providing content and structure of website.
-
- 2. [CSS](https://en.wikipedia.org/wiki/CSS) 
- - Programming language providing styling of website.
-
- 3. [JavaScript](https://en.wikipedia.org/wiki/Javascript)
- - Programming language used for the functions and interactivity behind the quiz.
+ 1. [Python](https://en.wikipedia.org/wiki/Python) 
+ - Programming language providing content and logic of project
  
  ### Frameworks, Libraries & Programs Used:
 
@@ -265,41 +185,11 @@ One other reason behind using arrays as opposed to objects for my quiz is that I
  2. [GitHub](https://github.com/) 
     - Remote hosting platform and code  repository.
 
- 3. [Balsamiq](https://balsamiq.com/):
-    - Balsamiq was used to create the initial designs for the pages on the site.
-
- 4. [Favicon](https://favicon.io/):
-    - Favicon used to implement a favicon on the browser tab.
- 
- 5. [Google Fonts](https://fonts.google.com/):
-    - Google fonts were used to import both the Hachi Maru and Poppins fonts that are used on the site.
-
-6. [Image Colour Picker](https://imagecolorpicker.com/)
-    - Website which allows you to find the hexidecimal colour code of a colour in an image.
-
-7. [Pexels](https://www.pexels.com/search/puppies/) 
-    - Copywrite free stock images used throughout website
-
-8. [TinyJPG](https://tinyjpg.com/)
-    - TinyJPG used to create smaller versions of images enabling quickly load times.
-
-9. [Am I Responsive?](http://ami.responsivedesign.is/)
-    - Used to create 4 screen mock up image in Readme.
-
 10. [Google Developer Tools](https://developers.google.com/web/tools) - including Lighthouse
     - Used to constantly test the code and give feedback. 
 
 11. [Responsinator](https://www.responsinator.com/) 
     - Used to check responsiveness across multiple screen sizes quickly.
-
-12. [Font Awesome](https://fontawesome.com/)
-    - Used for the social media icons in the footer. 
-
-13. [Toptal](https://www.toptal.com/designers/subtlepatterns/)
-    - Copywrite free image used for the background image on the quiz
-
-14. [Convertio](https://convertio.co/)
-    - Free conversion of image formats: JPG to webp 
 
 ## Testing
 
@@ -330,10 +220,6 @@ Additional information around these steps can be found on the [GitHub Pages Help
 4. You will be asked where you want to fork it to.
 
 ## Credits
-
-### Media
-- Background image of ema is from [Pexels](https://www.pexels.com/).
-- Background image giving wood effect is from [Toptal](https://www.toptal.com/designers/subtlepatterns/)
 
 ### Code
 
