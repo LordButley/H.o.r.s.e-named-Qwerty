@@ -59,22 +59,6 @@ class User:
         self.difficulty = ""
         print(f"Hi {self.name}")
 
-def name_check():
-    '''
-    Function to check the validity of input of a yes/no
-    question. Contains validation internally which
-    calls the function recursively if not met.
-    '''
-    input_check = input("Press Y for yes and N for no: \n").lower()
-    if input_check == "y":
-        return 1
-    elif input_check == "n":
-        return 2
-    else:
-        print("You did not enter Y or N")
-        print("Please try again")
-        return name_check()
-
 class Quiz:
     '''
     Creates an instance of Quiz
@@ -118,18 +102,18 @@ class Quiz:
         '''
         while True:
             print("What difficulty would you like to play?")
-            print("1 - Easy")
-            print("2 - Normal")
-            print("3 - Hard")
+            print("1 - Easy - 3 lives - Score *1")
+            print("2 - Normal - 2 lives - Score *1.5")
+            print("3 - Hard - 1 life - Score *2")
             difficulty_selection = input("Please enter the number of your choice: \n")
             if difficulty_selection == "1":
-                lives = 5
+                lives = 3
                 return lives
             elif difficulty_selection == "2":
-                lives = 4
+                lives = 2
                 return lives
             elif difficulty_selection == "3":
-                lives = 3
+                lives = 1
                 return lives
             else:
                 print(f"You have entered {difficulty_selection}")
@@ -154,12 +138,12 @@ def new_game():
 
     new_user = User()
     new_quiz = Quiz()
-    if new_quiz.lives == 5:
+    if new_quiz.lives == 3:
         new_user.difficulty = "Easy"
         print(new_user.difficulty)
-    elif new_quiz.lives == 4:
+    elif new_quiz.lives == 2:
         new_user.difficulty = "Normal"
-    elif new_quiz.lives == 3:
+    elif new_quiz.lives == 1:
         new_user.difficulty = "Hard"
     new_timer = Timer()
     x = 0
@@ -173,12 +157,13 @@ def new_game():
         else:
             new_quiz.lives -= 1
         x += 1
-        print(f"Score: {new_user.score}     Lives: {new_quiz.lives}\n")
+        print(f"Correct: {new_user.score}     Lives: {new_quiz.lives}\n")
+    new_user.score = difficulty_bonus(new_user.score, new_user.difficulty)
     user_result = [new_user.name, new_user.score, new_user.difficulty]
     leaderboard.append_row(user_result)
     print("Gameover!\n")
     print(f"{new_user.name} scored {new_user.score} on difficulty {new_user.difficulty.lower()}\n")
-    play_game()
+    # menu()
 
 
 def menu():
@@ -228,28 +213,29 @@ def view_highscore():
     [print(f"{highscore[0]} --- {highscore[1]} --- {highscore[2]} ") for highscore in highscores]
     print("\n")
 
+def name_check():
+    '''
+    Function to check the validity of input of a yes/no
+    question. Contains validation internally which
+    calls the function recursively if not met.
+    '''
+    input_check = input("Press Y for yes and N for no: \n").lower()
+    if input_check == "y":
+        return 1
+    elif input_check == "n":
+        return 2
+    else:
+        print("You did not enter Y or N")
+        print("Please try again")
+        return name_check()
 
-# def validate_data(value, num_of_answers):
-#     """
-#     Function to check the validity of inputs and
-#     returns corresponding error messages.
-#     """
-#     try:
-#         int(value)
-#     except ValueError:
-#         print("Please input a number")
-#         return False
-
-#     try:
-#         if value <= 0 or value > num_of_answers:
-#             raise DataError(
-#                 f"Please enter a number between 1 and {num_of_answers}"
-#                 )
-#     except ValueError as e:        
-#             print(e)
-#             return False
-
-#     return True
+def difficulty_bonus(player_score, player_difficulty):
+    if player_difficulty == "Easy":
+        return player_score
+    elif player_difficulty == "Normal":
+        return player_score * 1.5
+    elif player_difficulty == "Hard":
+        return player_score * 2
 
 
 menu()
