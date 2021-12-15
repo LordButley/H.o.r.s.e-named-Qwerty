@@ -1,3 +1,12 @@
+'''
+Typekwondo
+Typing game with different themes of answers.
+User can set different difficulties which have an
+effect on their score. Scores are compiled in a
+google sheets db and a sorted version can be accessed
+for highscores
+'''
+
 import random
 import time
 import string
@@ -43,6 +52,7 @@ class User:
         self.difficulty = ""
         print(f"Hi {self.name}")
 
+
 class Quiz:
     '''
     Creates an instance of Quiz
@@ -62,16 +72,21 @@ class Quiz:
             print("1 - Star Wars")
             print("2 - Harry Potter")
             print("3 - Periodic table of elements")
-            theme_selection = input("Please enter the number of your choice: \n")
+            theme_selection = input(
+                                "Please enter the number of your choice: \n")
             # first bug - input is always a string.
             if theme_selection == "1":
-                answer_set = random.sample(answers.STAR_WARS, len(answers.STAR_WARS))
+                answer_set = random.sample(
+                                answers.STAR_WARS, len(answers.STAR_WARS))
                 return answer_set
             elif theme_selection == "2":
-                answer_set = random.sample(answers.HARRY_POTTER, len(answers.HARRY_POTTER))
+                answer_set = random.sample(
+                                answers.HARRY_POTTER, len(
+                                    answers.HARRY_POTTER))
                 return answer_set
             elif theme_selection == "3":
-                answer_set = random.sample(answers.ELEMENTS, len(answers.ELEMENTS))
+                answer_set = random.sample(
+                                answers.ELEMENTS, len(answers.ELEMENTS))
                 return answer_set
             else:
                 print(f"You have entered {theme_selection}")
@@ -88,7 +103,8 @@ class Quiz:
             print("1 - Easy - 3 lives - Score *1")
             print("2 - Normal - 2 lives - Score *1.5")
             print("3 - Hard - 1 life - Score *2")
-            difficulty_selection = input("Please enter the number of your choice: \n")
+            difficulty_selection = input(
+                                "Please enter the number of your choice: \n")
             if difficulty_selection == "1":
                 lives = 3
                 return lives
@@ -144,7 +160,9 @@ def new_game():
     user_result = [new_user.name, new_user.score, new_user.difficulty]
     leaderboard.append_row(user_result)
     print("Gameover!\n")
-    print(f"{new_user.name} scored {new_user.score} on difficulty {new_user.difficulty.lower()}\n")
+    print(
+        f"{new_user.name} scored {new_user.score} \
+        on difficulty {new_user.difficulty.lower()}\n")
 
 
 def menu():
@@ -181,7 +199,9 @@ def view_highscore():
     scores = SHEET.worksheet("highscore").get_all_values()
     highscores = scores[slice(0, 6, 1)]
     print("\n")
-    [print(f"{highscore[0]} --- {highscore[1]} --- {highscore[2]} ") for highscore in highscores]
+    [print(
+        f"{highscore[0]} --- {highscore[1]} --- {highscore[2]} ")
+        for highscore in highscores]
     print("\n")
 
 

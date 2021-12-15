@@ -1,3 +1,8 @@
+'''
+Python file containing lists of
+each of the different theme of answers
+'''
+
 STAR_WARS = [
     "Jedi", "Lightsaber", "Skywalker", "Luke", "Leia",
     "Darth", "Vader", "Maul", "Padawan", "Obi Wan",
@@ -41,3 +46,4 @@ HARRY_POTTER = [
     "Hufflepuff", "Phoenix", "Diagon", "Horcrux",
     "Lumos", "Avada Kedavra", "Crucio", "Imperio"
     ]
+
