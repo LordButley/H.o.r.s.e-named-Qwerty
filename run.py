@@ -28,7 +28,7 @@ SHEET = GSPREAD_CLIENT.open('leaderboard')
 leaderboard = SHEET.worksheet('Sheet1')
 ordered_leaderboard = SHEET.worksheet("highscore")
 
-print("Welcome to Gamename")
+print("Welcome to Typekwondo!")
 print("Take a typing challenge and see how you compare to others")
 print("You have 60 seconds to type as many answers as possible")
 print("Enter your name for a chance to make it onto the leaderboard")
