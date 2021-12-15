@@ -8,6 +8,7 @@ for highscores
 '''
 
 import random
+import os
 import time
 import string
 import gspread
@@ -233,6 +234,13 @@ def difficulty_bonus(player_score, player_difficulty):
         return player_score * 1.5
     elif player_difficulty == "Hard":
         return player_score * 2
+
+
+def clear_screen():
+    '''
+    Function which clears the terminal
+    '''
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 
 menu()

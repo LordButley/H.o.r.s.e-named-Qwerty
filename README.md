@@ -223,7 +223,7 @@ Additional information around these steps can be found on the [GitHub Pages Help
 
 ### Code
 
-- All code written is my own.
+https://stackoverflow.com/questions/2084508/clear-terminal-in-python
 
 ### Content
 
