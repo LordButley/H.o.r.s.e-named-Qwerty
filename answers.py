@@ -17,8 +17,15 @@ ELEMENTS = [
     "Hydrogen", "Helium", "Lithium", "Beryllium",
     "Boron", "Carbon", "Nitrogen", "Oxygen",
     "Fluorine", "Neon", "Sodium", "Magnesium",
-    "Aluminium", "Silicon", "Phosporous", "Sulfur",
-    "Chlorine", "Argon", "Potassium", "Calcium"
+    "Aluminium", "Silicon", "Phosphorous", "Sulfur",
+    "Chlorine", "Argon", "Potassium", "Calcium",
+    "Scandium", "Titanium", "Vanadium", "Chromium",
+    "Manganese", "Iron", "Cobalt", "Nickel", "Copper",
+    "Zinc", "Gallium", "Germanium", "Arsenic", "Selenium",
+    "Bromine", "Krypton", "Rubidium", "Strontium", "Yttrium",
+    "Zirconium", "Niobium", "Molybdenum", "Technetium",
+    "Ruthenium", "Rhodium", "Palladium", "Silver",
+    "Cadmium", "Indium", "Tin", "Antimony", "Tellurium"
     ]
 
 HARRY_POTTER = [

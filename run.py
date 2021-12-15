@@ -39,22 +39,6 @@ class User:
             if correct_name == 1:
                 self.name = name
                 break
-            
-            # while True:
-            #     name_check = input("Press Y for yes and N for no: \n").lower()
-            #     if name_check == "y":
-            #         break
-            #     elif name_check == "n":
-            #         break
-            #     else:
-            #         print("You did not enter Y or N")
-            #         print("Please try again")
-
-
-        # self.name = input("What is your name? \n")
-        # self.name = name
-
-
         self.score = 0
         self.difficulty = ""
         print(f"Hi {self.name}")
@@ -79,7 +63,6 @@ class Quiz:
             print("2 - Harry Potter")
             print("3 - Periodic table of elements")
             theme_selection = input("Please enter the number of your choice: \n")
-            # validate_data(theme_selection, 3)
             # first bug - input is always a string.
             if theme_selection == "1":
                 answer_set = random.sample(answers.STAR_WARS, len(answers.STAR_WARS))
@@ -118,7 +101,6 @@ class Quiz:
             else:
                 print(f"You have entered {difficulty_selection}")
                 print("Please enter the number of one of the options provided")
-
 
 
 class Timer:
@@ -163,7 +145,6 @@ def new_game():
     leaderboard.append_row(user_result)
     print("Gameover!\n")
     print(f"{new_user.name} scored {new_user.score} on difficulty {new_user.difficulty.lower()}\n")
-    # menu()
 
 
 def menu():
@@ -189,15 +170,7 @@ def menu():
         else:
             print(f"You have entered {menu_selection}")
             print("Please enter the number of one of the options provided")
-            
 
-
-
-        # print("View highscores?")
-        # if (input("Press Y for yes and N for no: ").lower()) == "y":
-        # view_highscore()
-        # play_game()
-   
 
 def view_highscore():
     '''
@@ -205,13 +178,12 @@ def view_highscore():
     spreadsheet and splices the top 5 scores. These
     are then printed in formatted way.
     '''
-    # print("View highscores?")
-    # if (input("Press Y for yes and N for no: \n").lower()) == "y":
     scores = SHEET.worksheet("highscore").get_all_values()
     highscores = scores[slice(0, 6, 1)]
     print("\n")
     [print(f"{highscore[0]} --- {highscore[1]} --- {highscore[2]} ") for highscore in highscores]
     print("\n")
+
 
 def name_check():
     '''
@@ -229,7 +201,11 @@ def name_check():
         print("Please try again")
         return name_check()
 
+
 def difficulty_bonus(player_score, player_difficulty):
+    '''
+    Function to add difficulty multipier to score
+    '''
     if player_difficulty == "Easy":
         return player_score
     elif player_difficulty == "Normal":
