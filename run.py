@@ -28,6 +28,16 @@ SHEET = GSPREAD_CLIENT.open('leaderboard')
 leaderboard = SHEET.worksheet('Sheet1')
 ordered_leaderboard = SHEET.worksheet("highscore")
 
+print("  _______               _                            _       ")
+print(" |__   __|             | |                          | |      ")
+print("    | |_   _ _ __   ___| | ___      _____  _ __   __| | ___  ")
+print("    | | | | | '_ \ / _ \ |/ | \ /\ / / _ \| '_ \ / _` |/ _ \ ")
+print("    | | |_| | |_) |  __/   < \ V  V / (_) | | | | (_| | (_) |")
+print("    |_|\__, | .__/ \___|_|\_\ \_/\_/ \___/|_| |_|\__,_|\___/ ")
+print("        __/ | |                                              ")
+print("       |___/|_|                                              ")
+
+
 print("Welcome to Typekwondo!")
 print("Take a typing challenge and see how you compare to others")
 print("You have 60 seconds to type as many answers as possible")
