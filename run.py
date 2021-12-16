@@ -274,7 +274,7 @@ def show_rules():
     Function which displays how to play the game
     '''
     clear_screen()
-    print("Welcome to Typekwondo!")
+    print("Welcome to Typekwondo!\n")
     print("Take a typing challenge and see how you compare to others")
     print("Rules:")
     print("- You have 60 seconds to type as many answers as possible")
@@ -283,7 +283,7 @@ def show_rules():
     print("- Normal - You have 2 lives and a 1.5* score multiplier")
     print("- Hard - You have 1 lives and a 2* score multiplier")
     print("- You can view the leaderboard of the top 5 typers")
-    print("- !The quiz is not case sensitive!")
+    print("- ! The quiz is not case sensitive !\n")
     print("Good luck!\n")
 
 

@@ -106,7 +106,9 @@ The header becomes underlines when hovered over.
 
 ## Features to implement in the future
 
-- Add additional syllabaries such as Katakana and eventually Kanji
+- Add additional question sets
+- Add a superhard difficulty setting that is case sensitive
+- Add a variant where the word you have to spell is hidden after a second.
 
 ## Technologies Used
 
