@@ -57,17 +57,17 @@ The program is designed to be quick and easy to play:
 
 ## Skeleton
 
-The initial ideas were taken from the structure planning and a process tree was created using [app.diagram.net](app.diagram.net)[here.](assets/images/processtree.JPG). 
+The initial ideas were taken from the structure planning and a process tree was created using app.diagram.net [here.](assets/images/processtree.JPG). 
 
 # Features
 
 ## Existing Features
 
-### Game container
+### Home page and menu
 
 - All content appears within a container that has a background image of a light wood to match that of an Ema. If this background image cannot load, a background colour has been added which has been plucked from the image. The container has a maximum absolute size to make sure that at full screen it bears resemblance to an Ema and a maximum relative size to ensure that you can always see the background image on all screen sizes. It additionally has a border style and shadow to give it the 3d look you would expect from a wooden tile.
 
-### Header
+### Leaderboard
 
 - Logo "JapanEasy" in large unmissable font sets the tone of the website. The Logo is a hyperlink back to the homepage in keeping with current web standards. This is consistent on every page
 
@@ -75,20 +75,20 @@ The header becomes underlines when hovered over.
 
 ![Screen shot of the header of "JapanEasy"](assets/images/header.JPG) -->
 
-### Footer
+### How to play
 
 - The Footer contains links to the "JapanEasy" social media websites. These open to a new tab upon click. These are consistent on every page
 
 ![Screen shot of the footer of "JapanEasy"](assets/images/footer.JPG) -->
 
 
-### Background
+### Enter name
 
 - Background image - This is a full screen size image of a lots of Ema which will have been hung in a temple. Ema are praying or wishes written upon a piece of wood. This is the background image for all pages. There are two version of the image of different resolutions which will load depending on your screensize to optimize speed.
 
 ![Background image of "JapanEasy"](assets/images/backgroundimage2.webp)
 
-### Introduction, explanation and choices
+### Difficulty and quiz theme choices
 
  - You are welcomed with a short and concise introduction and explanation of what to do followed by a couple of radio buttons. These are the options for the game. You can either have the questions in Hiragana and the answers in English or Vice versa. All questions and answers are completely randomised to ensure that the syllabary is learnt rather than the questions.
 
@@ -96,29 +96,13 @@ The header becomes underlines when hovered over.
 
 ![Screen shot of the first page of "JapanEasy"](assets/images/choices.JPG) -->
 
-### Buttons
+### Quiz
 
-- All buttons on the site provide user feedback by taking on the red border when hovered over.
-
-### Quiz page
-
-- The layout of the quiz is a question, which is either English or Hiragana, followed by answer tiles; the number of which depends on the difficulty setting.
-- Score counters runs along the bottom that displays the number of correct answers given as well as incorrect.
-- All answer tiles provide feedback with the consistent red border on hover.
-- When an answer is chosen, if it is correct, the background of the tile will turn green, and if incorrect, the background of the tile will turn red.
-- The quiz will run through the whole syllabary, however you can choose to end the game at any time with the "End Game" button which will take you to the end game page.
-
-![Screen shot of quiz from "JapanEasy"](assets/images/quiz.JPG)
-
-### End Game page
-
-- When you click to end the game or complete the syllabary to are taken to an end game screen which provided you with the number of answers correctly answered out of the number of questions.
-- Feedback is provided dependent on the score.
-- A "try again" button returns you to the home page where you can make your choices again and start the quiz again.
-
-![Screen shot of contact us form from "It's Puppy Time"](assets/images/endgame.JPG) 
+- All buttons on the site provide user feedback by taking on the red border when hovered over. 
 
 ### Python functionality
+
+### Data and Database
 
 ## Features to implement in the future
 
