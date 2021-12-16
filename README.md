@@ -149,19 +149,31 @@ The testing process can be seen in the [TESTING.md](TESTING.md) document.
 
 ## Deployment
 
-### Github Pages
-The site is hosted using GitHub pages, deployed directly from the master branch of GitHub. The deployed site will update automatically as new commits are pushed to the master branch.
+### Heroku
+The site is hosted using Heroku, deployed directly from the master branch of GitHub. The deployed site will update automatically as new commits are pushed to the master branch.
 
-#### How I deployed my project to GitHub pages.
-To host on GitHub pages you must follow these steps:
+#### How I deployed my project to Heroku.
+To host on Heroku you must follow these steps:
 
-1. Go to [GitHub.com](https://github.com/)
+#### Updating dependencies for Heroku deployment
+
+1. Create a requirements.txt file in the home directory of project
+2. In the terminal write : pip3 freeze > requirements.txt
+
+#### Creating a Heroku App
+
+1. Go to [Heroku](https://www.heroku.com/)
 2. Login to my account.
-3. Click on 'Responsitories'
-4. Click on 'JapanEasy'
-5. Go to the 'Settings' tab
-6. Scroll down to the 'GitHub Pages' section and set the source to 'main'. This turns on GitHub pages for the repository.
+3. On the Heroku dashboard click on 'New'
+4. Click on 'Create new app"
+5. Input the app name 
+6. Select region
+6. Click "Create app"
 7. Reload the page. Scroll back to 'GitHub Pages' section, where the new URL for the deployed site can be found.
+
+####
+
+
 
 Additional information around these steps can be found on the [GitHub Pages Help Page](https://docs.github.com/en/github/working-with-github-pages/creating-a-github-pages-site).
 

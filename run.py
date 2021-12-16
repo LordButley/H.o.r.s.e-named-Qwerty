@@ -38,6 +38,7 @@ print("        __/ | |                                              ")
 print("       |___/|_|                                              ")
 print("\n")
 
+
 class User:
     '''
     Creates an instance of User
@@ -194,17 +195,7 @@ def menu():
         elif menu_selection == "2":
             view_highscore()
         elif menu_selection == "3":
-            print("Welcome to Typekwondo!")
-            print("Take a typing challenge and see how you compare to others")
-            print("Rules:")
-            print("- You have 60 seconds to type as many answers as possible")
-            print("- Difficulty affects score and livess.")
-            print("- Easy - You have 3 lives and a 1* score multiplier")
-            print("- Normal - You have 2 lives and a 1.5* score multiplier")
-            print("- Hard - You have 1 lives and a 2* score multiplier")
-            print("- You can view the leaderboard of the top 5 typers")
-            print("- !The quiz is not case sensitive!")
-            print("Good luck!")
+            show_rules()
         elif menu_selection == "4":
             clear_screen()
             print("Thanks for playing!")
@@ -258,6 +249,23 @@ def difficulty_bonus(player_score, player_difficulty):
         return player_score * 1.5
     elif player_difficulty == "Hard":
         return player_score * 2
+
+
+def show_rules():
+    '''
+    Function which displays how to play the game
+    '''
+    print("Welcome to Typekwondo!")
+    print("Take a typing challenge and see how you compare to others")
+    print("Rules:")
+    print("- You have 60 seconds to type as many answers as possible")
+    print("- Difficulty affects score and livess.")
+    print("- Easy - You have 3 lives and a 1* score multiplier")
+    print("- Normal - You have 2 lives and a 1.5* score multiplier")
+    print("- Hard - You have 1 lives and a 2* score multiplier")
+    print("- You can view the leaderboard of the top 5 typers")
+    print("- !The quiz is not case sensitive!")
+    print("Good luck!")
 
 
 def clear_screen():
