@@ -65,36 +65,50 @@ The initial ideas were taken from the structure planning and a process tree was 
 
 ### Home page and menu
 
-- All content appears within a container that has a background image of a light wood to match that of an Ema. If this background image cannot load, a background colour has been added which has been plucked from the image. The container has a maximum absolute size to make sure that at full screen it bears resemblance to an Ema and a maximum relative size to ensure that you can always see the background image on all screen sizes. It additionally has a border style and shadow to give it the 3d look you would expect from a wooden tile.
+- Contains ASCII art title of the game
+- Gives the user 4 options; 
+    1. To start a new game
+    2. View leaderboard
+    3. How to play
+    4. Exit game
+- If you do not enter one of the corresponding numbers, you will be told what you have entered and asked to enter the number of one of the options provided
+
+![Screen shot of the homepage of Typekwondo](assets/images/homepage.JPG)
 
 ### Leaderboard
 
-- Logo "JapanEasy" in large unmissable font sets the tone of the website. The Logo is a hyperlink back to the homepage in keeping with current web standards. This is consistent on every page
+- Prettytable library has been imported and used for the structure of the table.
+- The leaderboard consists of three columns; User, Score and Difficulty.
+- The data from the leaderboard is pulled from the googlesheets database.
+- You are also provided with the menu options.
 
-The header becomes underlines when hovered over.
-
-![Screen shot of the header of "JapanEasy"](assets/images/header.JPG) -->
+![Screen shot of the leaderboard of Typekondo](assets/images/leaderboard.JPG) -->
 
 ### How to play
 
-- The Footer contains links to the "JapanEasy" social media websites. These open to a new tab upon click. These are consistent on every page
+- How to play explains the different elements of the game as well as the scoring structure
+- The menu options are also provided for continuation
 
-![Screen shot of the footer of "JapanEasy"](assets/images/footer.JPG) -->
+![Screen shot of the how to play section](assets/images/howto.JPG) -->
 
 
 ### Enter name
 
-- Background image - This is a full screen size image of a lots of Ema which will have been hung in a temple. Ema are praying or wishes written upon a piece of wood. This is the background image for all pages. There are two version of the image of different resolutions which will load depending on your screensize to optimize speed.
-
-![Background image of "JapanEasy"](assets/images/backgroundimage2.webp)
+- You are asked to enter your name
+- You are then asked if this is correct
+- If you do not answer yes or no to whether it is correct, you are redirected to answer the question again. You are told what you have entered.
+- Once you select your name, the console prints out Hi and your name
 
 ### Difficulty and quiz theme choices
 
- - You are welcomed with a short and concise introduction and explanation of what to do followed by a couple of radio buttons. These are the options for the game. You can either have the questions in Hiragana and the answers in English or Vice versa. All questions and answers are completely randomised to ensure that the syllabary is learnt rather than the questions.
+ - The quiz provides 3 different quiz types: Star Wars, Harry Potter and Periodic table of elements.
+ - You are asked to choose which you would like to play.
+ - The difficulty setting is next requested. You can choose easy, normal or hard. Easy applies a 1* score multiplier, normal is 1.5* and hard is 2*. Additionally if you play on normal you have 3 lives, normal you have 2 and hard you have 1.
+  - Incorrect input is captured and directed back to the user
 
- The difficulty can be selected as easy, medium or hard. Easy gives 3 answers to choose from, medium gives 6 and hard gives 9.
+![Screen shot of the quiz choices](assets/images/themechoice.JPG) -->
+![Screen shot of the difficulty choices](assets/images/difficultychoice.JPG) -->
 
-![Screen shot of the first page of "JapanEasy"](assets/images/choices.JPG) -->
 
 ### Quiz
 
