@@ -109,14 +109,27 @@ The initial ideas were taken from the structure planning and a process tree was 
 ![Screen shot of the quiz choices](assets/images/themechoice.JPG) -->
 ![Screen shot of the difficulty choices](assets/images/difficultychoice.JPG) -->
 
-
 ### Quiz
 
-- All buttons on the site provide user feedback by taking on the red border when hovered over. 
+- The number of correctly answered questions and lives are shown at the top of the quiz.
+- The word to type is shown underneath
+- The terminal is cleared after each question
+- After the quiz ends, you are shown your score
+- A menu is provided at the end of the quiz for continuation
 
-### Python functionality
+![Screen shot of the quiz](assets/images/quizpage.JPG) -->
 
 ### Data and Database
+
+Data is sent from the app to the database (spreadsheets). The following table was created to show the data structure through the app
+
+| Title      | Key in Database | Data Type    |
+|------------|-----------------|--------------|
+| name       | name            | CharField    |
+| score      | score           | DecimalField |
+| Difficulty | difficulty      | CharField    |
+
+There are two sheets associated with the app. The first acts as a dump for all the data from the games that have been played. The second is generated from the first and order numerically allowing the top 5 to be taken. This is achieved using "=sort(Sheet1!A:C, 2, FALSE)" on the second spreadsheet.
 
 ## Features to implement in the future
 
@@ -138,10 +151,24 @@ The initial ideas were taken from the structure planning and a process tree was 
     - IDE (Integrated Development Environment), for writing, editing and saving code.
 
  2. [GitHub](https://github.com/) 
-    - Remote hosting platform and code repository.
+    - Remote code repository.
 
-3. [app.diagram.net](app.diagram.net)
+ 3. [Heroku](https://www.heroku.com/)
+    - Cloud application platform used to host program
+
+ 4. [app.diagram.net](app.diagram.net)
     - Used to create process diagram. 
+
+ 5. [Ascii Art Generator](https://patorjk.com/software/taag/#p=testall&h=2&f=Graffiti&t=Typekwondo)
+    - Used to create the title on the homepage
+
+ 6. Python Libraries:
+    - os - Used to clear the terminal
+    - time - Used for creating a timer
+    - random - Used to randomise questions
+    - prettytable - Used for the leaderboard
+    - string - Used for capitalizing input to match that of the database
+    - gspread and google.oauth2.service_account for linking google sheets
 
 ## Testing
 

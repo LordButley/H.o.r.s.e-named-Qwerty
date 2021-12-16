@@ -209,20 +209,6 @@ def menu():
             print("Please enter the number of one of the options provided\n")
 
 
-# def view_highscore():
-#     '''
-#     Function retrieves data from an numerically ordered
-#     spreadsheet and splices the top 5 scores. These
-#     are then printed in formatted way.
-#     '''
-#     clear_screen()
-#     scores = SHEET.worksheet("highscore").get_all_values()
-#     highscores = scores[slice(0, 6, 1)]
-#     [print(
-#         f"{highscore[0]} --- {highscore[1]} --- {highscore[2]} ")
-#         for highscore in highscores]
-#     print("\n")
-
 def view_highscore():
     '''
     Function retrieves data from an numerically ordered
