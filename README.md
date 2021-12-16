@@ -125,8 +125,8 @@ Data is sent from the app to the database (spreadsheets). The following table wa
 
 | Title      | Key in Database | Data Type    |
 |------------|-----------------|--------------|
-| name       | name            | CharField    |
-| score      | score           | DecimalField |
+| Name       | name            | CharField    |
+| Score      | score           | DecimalField |
 | Difficulty | difficulty      | CharField    |
 
 There are two sheets associated with the app. The first acts as a dump for all the data from the games that have been played. The second is generated from the first and order numerically allowing the top 5 to be taken. This is achieved using "=sort(Sheet1!A:C, 2, FALSE)" on the second spreadsheet.
@@ -169,6 +169,9 @@ There are two sheets associated with the app. The first acts as a dump for all t
     - prettytable - Used for the leaderboard
     - string - Used for capitalizing input to match that of the database
     - gspread and google.oauth2.service_account for linking google sheets
+
+ 7.[http://pep8online.com/](http://pep8online.com/)
+    - PEP8 Validator used to check code for compliance
 
 ## Testing
 

@@ -42,7 +42,9 @@ print("\n")
 
 class User:
     '''
-    Creates an instance of User
+    Creates an instance of User. A user object has 3 attributes which 
+    are name, score and difficulty. These correspond to the data required
+    in the database.
     '''
     def __init__(self):
 
@@ -62,10 +64,11 @@ class User:
 
 class Quiz:
     '''
-    Creates an instance of Quiz
+    Creates an instance of Quiz. A quiz class has two methods
+    which are used to select the quiz theme and the difficulty.
+    The results of these methods for the attributes.
     '''
 
-    # bug2 - did not use self initially
     def __init__(self):
         self.answers = self.select_theme()
         self.lives = self.select_difficulty()
@@ -81,7 +84,6 @@ class Quiz:
             print("3 - Periodic table of elements")
             theme_selection = input(
                                 "Please enter the number of your choice: \n")
-            # first bug - input is always a string.
             if theme_selection == "1":
                 answer_set = random.sample(
                                 answers.STAR_WARS, len(answers.STAR_WARS))
@@ -123,7 +125,8 @@ class Quiz:
             else:
                 clear_screen()
                 print(f"You have entered {difficulty_selection}")
-                print("Please enter the number of one of the options provided\n")
+                print("Please enter the number of one of the options provided")
+                print("\n")
 
 
 class Timer:
@@ -156,8 +159,6 @@ def new_game():
     clear_screen()
     new_timer = Timer()
     x = 0
-    # bug 3 - while loop not stopping(for loop inside of while loop)
-    # bug 4 = x inside of while loop resetting to 0 everytime
     print(f"Correct: {new_user.score}     Lives: {new_quiz.lives}\n")
     while new_timer.game_over > time.time() and new_quiz.lives != 0:
         print("       "+new_quiz.answers[x]+"\n")
