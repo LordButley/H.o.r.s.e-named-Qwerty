@@ -38,15 +38,6 @@ print("        __/ | |                                              ")
 print("       |___/|_|                                              ")
 
 
-print("Welcome to Typekwondo!")
-print("Take a typing challenge and see how you compare to others")
-print("You have 60 seconds to type as many answers as possible")
-print("Enter your name for a chance to make it onto the leaderboard")
-print("You can choose difficulty which affects lives and score")
-print("!The quiz is not case sensitive!")
-print("Good luck!")
-
-
 class User:
     '''
     Creates an instance of User
@@ -194,7 +185,8 @@ def menu():
         print("Please select an option: ")
         print("1 - Start new game")
         print("2 - View leaderboard")
-        print("3 - Exit game")
+        print("3 - How to play")
+        print("4 - Exit game")
         menu_selection = input("Please enter the number of your choice: \n")
         if menu_selection == "1":
             clear_screen()
@@ -202,6 +194,18 @@ def menu():
         elif menu_selection == "2":
             view_highscore()
         elif menu_selection == "3":
+            print("Welcome to Typekwondo!")
+            print("Take a typing challenge and see how you compare to others")
+            print("Rules:")
+            print("- You have 60 seconds to type as many answers as possible")
+            print("- Difficulty affects score and livess.")
+            print("- Easy - You have 3 lives and a 1* score multiplier")
+            print("- Normal - You have 2 lives and a 1.5* score multiplier")
+            print("- Hard - You have 1 lives and a 2* score multiplier")
+            print("- You can view the leaderboard of the top 5 typers")
+            print("- !The quiz is not case sensitive!")
+            print("Good luck!")
+        elif menu_selection == "4":
             clear_screen()
             print("Thanks for playing!")
             print("Goodbye")

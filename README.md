@@ -40,7 +40,7 @@ As all developers will tell you, being able to type quickly and accurately is an
 
 And what do developers love? Gamification! Introducing TypeKwondo, where you get to improve your typing skills, whilst competitively playing a typing game in a theme of your choosing. On top of this, you can also compare your scores with the leaderboard and try and make it into the top 5 best typers ever (*not an official title) 
 
-You can visit the live website [here](https://lordbutley.github.io/JapanEasy/)
+You can visit the live website [here](https://typekwondo.herokuapp.com/)
 
 ![Am I Responsive image of how the landing page looks across different browser sizes](assets/images/responsivescreens.JPG)
 
