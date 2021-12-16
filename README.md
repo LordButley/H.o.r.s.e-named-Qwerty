@@ -1,37 +1,3 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
-
-Welcome LordButley,
-
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
-
-## Reminders
-
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
-
-## Creating the Heroku app
-
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
-
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!
-
-
-
 # TypeKwondo!
 
 Welcome to TypeKwondo! 
@@ -42,7 +8,7 @@ And what do developers love? Gamification! Introducing TypeKwondo, where you get
 
 You can visit the live website [here](https://typekwondo.herokuapp.com/)
 
-![Am I Responsive image of how the landing page looks across different browser sizes](assets/images/responsivescreens.JPG)
+![Landing terminal screen](assets/images/homepage.JPG)
 
 # Contents
 
@@ -50,34 +16,33 @@ You can visit the live website [here](https://typekwondo.herokuapp.com/)
 
 ## Project Goals
 
-* Create a user-friendly and accessible website.
-* Create a learning game that is straight forward to start, play and restart.
-* Create a translation game that can be played with questions in English or Hiragana.
+* Create a user-friendly program.
+* Create a game that is straight forward to start, play and restart.
+* Create a game that has additional benefits to the user.
 * Ensure that questions are randomised and not repeated
-* Ensure that answers are randomised so that the language is learnt rather than the questions
-* Provide the user with constant feedback on their progress through the game and through the site. 
-* Give the website a Japanese feel through imagery.
-* Ensure the website is viewable across devices of all sizes.
-* To create a website that would be immediately useful when live but also has scope to be expanded.
+* Provide the user with feedback on their progress through the program and through the game. 
+* Catch all incorrect inputs that may break the program
+* Give the user a choice of difficulty setting
+* Give the user a choice of questions
+* Create a database for the storage of user scores
+* Provide the user with their score as well as the top 5 scores of all users.
 
 ## User Stories
 
-* As a user visiting the site for the first time, I want to be able to navigate the website intuitively.
-* As a user visiting the site for the first time, I want to be able to play the game quickly and easily
-* As a user, I want to be able to access the website on desktop, tablet and mobile devices to ensure convenience.
-* As a user, I want to be able to easily access the social media accounts of "JapanEasy". 
-* As a user, I want to be provided with feedback such as correct and incorrect scores to allow me to monitor my learning progress.
-* As a user, I want to be able to choose whether the questions are in English or Hiragana.
+* As a user visiting the site for the first time, I want to be able to navigate the program intuitively.
+* As a user visiting the site for the first time, I want to be able to play the game quickly and easily. 
+* As a user, I want to be provided with feedback such as correct answers.
+* As a user, I want to be able to choose a theme of questions.
 * As a user, I want to be able to set the difficulty of the quiz
-* As a user, I want the questions *and* answers to be randomised to help with learning.
+* As a user, I want the questions to be randomised to keep the game interesting.
+* As a user, I do not want to break the program by putting in unexpected inputs.
 
 ## Target Audience
 
 The target audience of this website is any person who :
 
-* wants to learn Japanese
-* is learning Japanese and wants a helpful learning aid
-* has learnt Japanese and wants a revision aid
+* enjoys games
+* want to improve their typing ability
 
 ## Structure
 
