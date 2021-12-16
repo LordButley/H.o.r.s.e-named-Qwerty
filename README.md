@@ -184,14 +184,11 @@ To host on Heroku you must follow these steps:
 
 ### Code
 
-https://stackoverflow.com/questions/2084508/clear-terminal-in-python
-
-### Content
-
-- All content written is my own and based on my own experiences learning Hiragana and what I would have found more helpful. I took inspiration from all the main Hiragana websites such as 
+- Code lines 19 - 30 regarding connecting googlesheets APIs adapted from Code Institute LMS 
+- Clear screen function code adapted from stackoverflow [here](https://stackoverflow.com/questions/2084508/clear-terminal-in-python)
 
 ### Thanks
 
 - to tutor support at Code Institute. I have constantly found their positivity and genuine interest in helping resolve issues in my code a great help 
-- to my mentor who reviewed my project and gave feedback.
-- to my partner who travelled Japan with me and gave me the inspiration to make this project. 
+- to my mentor, Richard Wells, who reviewed my project and gave feedback.
+- to my partner who is always willing to test everything I create 

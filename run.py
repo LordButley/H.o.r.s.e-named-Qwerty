@@ -123,7 +123,7 @@ class Quiz:
             else:
                 clear_screen()
                 print(f"You have entered {difficulty_selection}")
-                print("Please enter the number of one of the options provided")
+                print("Please enter the number of one of the options provided\n")
 
 
 class Timer:
@@ -151,7 +151,7 @@ def new_game():
         new_user.difficulty = "Hard"
     clear_screen()
     print("You will be shown a word. Type the word into the terminal")
-    print("as fast as possible and hit enter")
+    print("as fast as possible and hit enter\n")
     input("The game will start when you hit enter")
     clear_screen()
     new_timer = Timer()
@@ -206,7 +206,7 @@ def menu():
         else:
             clear_screen()
             print(f"You have entered {menu_selection}")
-            print("Please enter the number of one of the options provided")
+            print("Please enter the number of one of the options provided\n")
 
 
 # def view_highscore():
@@ -251,6 +251,7 @@ def name_check():
         clear_screen()
         return 2
     else:
+        clear_screen()
         print("You did not enter Y or N")
         print("Please try again")
         return name_check()
@@ -283,7 +284,7 @@ def show_rules():
     print("- Hard - You have 1 lives and a 2* score multiplier")
     print("- You can view the leaderboard of the top 5 typers")
     print("- !The quiz is not case sensitive!")
-    print("Good luck!")
+    print("Good luck!\n")
 
 
 def clear_screen():
