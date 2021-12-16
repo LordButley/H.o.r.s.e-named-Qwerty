@@ -46,28 +46,18 @@ The target audience of this website is any person who :
 
 ## Structure
 
-The website is focussed entirely on the learning quiz. As such there is a single HTML page that is manipulated through CSS and JavaScript so not to distract from the site's goals. This manipulation results in 3 distinct parts:
+The program is designed to be quick and easy to play:
 
-- Welcome page - This contains and introduction and brief explanation of the quiz and well as the intuitive controls.
-- Quiz page - This is generated through JavaScript and contains a question and a number of answers determined by the difficulty setting.
-- End game page - This contains the score achieved in the quiz and feedback.
+- Welcome page - This contains a ASCII art title and the menu options.
+- How to play page - This provides details on how to play the game
+- Leaderboard page - This provides the a leaderboard of the top 5 userscores
+- Options pages - The user is given the choice of difficulty and question theme
+- Game page - The user is shown a word to type. The score and lives are shown after each question
 
 
 ## Skeleton
 
-The initial ideas were taken from the structure planning and a visual mock up was created using Balsamiq. Mobile and Tablet wireframes are all available [here.](wireframes/wireframes.pdf). Note Desktop and Tablet wireframes are identical with the only difference being a larger background image and as such have not been included.
-
-## Surface
-
-### Imagery
-
-### Colour Palette
-
-### Typography
-
-### Language / Tone
-
-From my experience learning Japanese, I found that one of the most important things with a learning tool such as this, is the simplicity of use. As such I have minimised the amount of text through the website. Additionally, where there is text, I have ensured that it has a positive tone due to the difficulty faced in learning a language like Japanese. As anyone who's tried learning a foreign language before will know, motivation is key.
+The initial ideas were taken from the structure planning and a process tree was created using [app.diagram.net](app.diagram.net)[here.](assets/images/processtree.JPG). 
 
 # Features
 
@@ -148,13 +138,10 @@ The header becomes underlines when hovered over.
     - IDE (Integrated Development Environment), for writing, editing and saving code.
 
  2. [GitHub](https://github.com/) 
-    - Remote hosting platform and code  repository.
+    - Remote hosting platform and code repository.
 
-10. [Google Developer Tools](https://developers.google.com/web/tools) - including Lighthouse
-    - Used to constantly test the code and give feedback. 
-
-11. [Responsinator](https://www.responsinator.com/) 
-    - Used to check responsiveness across multiple screen sizes quickly.
+3. [app.diagram.net](app.diagram.net)
+    - Used to create process diagram. 
 
 ## Testing
 
