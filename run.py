@@ -231,13 +231,9 @@ def view_highscore():
     '''
     clear_screen()
     scores = SHEET.worksheet("highscore").get_all_values()
-    # highscore_headings = scores[slice(0, 1, 1)]
     highscores = scores[slice(1, 6, 1)]
     table = PrettyTable(scores[0])
     [table.add_row(highscore) for highscore in highscores]
-    # [print(
-    #     f"{highscore[0]} --- {highscore[1]} --- {highscore[2]} ")
-    #     for highscore in highscores]
     print(table)
     print("\n")
 
@@ -276,6 +272,7 @@ def show_rules():
     '''
     Function which displays how to play the game
     '''
+    clear_screen()
     print("Welcome to Typekwondo!")
     print("Take a typing challenge and see how you compare to others")
     print("Rules:")
