@@ -282,7 +282,7 @@ def show_rules():
     print("- Easy - You have 3 lives and a 1* score multiplier")
     print("- Normal - You have 2 lives and a 1.5* score multiplier")
     print("- Hard - You have 1 lives and a 2* score multiplier")
-    print("If you run out of time or life, the quiz ends")
+    print("- If you run out of time or life, the quiz ends")
     print("- You can view the leaderboard of the top 5 typers")
     print("- ! The quiz is not case sensitive !\n")
     print("Good luck!\n")
