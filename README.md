@@ -171,11 +171,24 @@ To host on Heroku you must follow these steps:
 6. Click "Create app"
 7. Reload the page. Scroll back to 'GitHub Pages' section, where the new URL for the deployed site can be found.
 
-####
+#### Input settings
 
+1. Click on "Reveal Config Vars"
+2. In the field for key, enter "CREDS"
+3. Copy contents of creds.json into the corresponding value field.
+4. In the next field for key, enter "PORT"
+5. In the corresponding value field enter "8000"
+6. Click "Add buildpack"
+7. Click "Python" and then "save changes"
+8. Click "Add buildpack"
+9. Click "nodejs" and then "save changes". 
+10. Ensure these build packs are listed in the order above.
 
+#### Deploy section
 
-Additional information around these steps can be found on the [GitHub Pages Help Page](https://docs.github.com/en/github/working-with-github-pages/creating-a-github-pages-site).
+1. Click on Github under deployment method
+2. Search for repository and then click on "connect"
+3. Click on "Enable Automatic Deploys"
 
 #### Forking a GitHub Repository
 1. Login to GitHub.

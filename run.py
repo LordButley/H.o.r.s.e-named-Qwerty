@@ -157,6 +157,7 @@ def new_game():
     x = 0
     # bug 3 - while loop not stopping(for loop inside of while loop)
     # bug 4 = x inside of while loop resetting to 0 everytime
+    print(f"Correct: {new_user.score}     Lives: {new_quiz.lives}\n")
     while new_timer.game_over > time.time() and new_quiz.lives != 0:
         print("       "+new_quiz.answers[x]+"\n")
         answer = string.capwords(input("Enter answer: \n").lower())
@@ -232,6 +233,7 @@ def name_check():
     if input_check == "y":
         return 1
     elif input_check == "n":
+        clear_screen()
         return 2
     else:
         print("You did not enter Y or N")
@@ -259,7 +261,7 @@ def show_rules():
     print("Take a typing challenge and see how you compare to others")
     print("Rules:")
     print("- You have 60 seconds to type as many answers as possible")
-    print("- Difficulty affects score and livess.")
+    print("- Difficulty affects score and lives.")
     print("- Easy - You have 3 lives and a 1* score multiplier")
     print("- Normal - You have 2 lives and a 1.5* score multiplier")
     print("- Hard - You have 1 lives and a 2* score multiplier")
