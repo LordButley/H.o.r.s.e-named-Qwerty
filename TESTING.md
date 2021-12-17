@@ -2,7 +2,7 @@
 
  ## Python
 
- - No errors were returned when passing through http://pep8online.com/. A warning arises from having an a blank line at the end but this was intentionally added to combat an issue that arises on Heroku without it.
+ - No errors were returned when passing through http://pep8online.com/. 
 
 ## User Stories Testing
 1. As a user visiting the site for the first time, I want to navigate the site intuitively.
@@ -34,26 +34,26 @@
 
 I have robustly testing the application completing the following actions:
 
-  * Navigation - Repeated steps on all pages.
-        * Enter the corresponding number for each section on the menu to see if it directs to the right page.
-        * Complete the above check on each page of the game to see if their are any glitches that are page specific.
-        * Check that exitting the game works as expected.
+* Navigation - Repeated steps on all pages
+    * Enter the corresponding number for each section on the menu to see if it directs to the right page.
+    * Complete the above check on each page of the game to see if their are any glitches that are page specific.
+    * Check that exitting the game works as expected.
     
-    * Input and error handling - Repeated steps on all input sections.
-        * Enter values which do not correspond to menu items.
-        * Enter no value at all.
+* Input and error handling - Repeated steps on all input sections.
+    * Enter values which do not correspond to menu items.
+    * Enter no value at all.
 
-    * Quiz
-        * Check that the score counter counts correctly.
-        * Check that the game times out correctly.
-        * Check that the correctly score is presented after the quiz.
-        * Check that the difficulty multiplier is correctly applied.
-        * Check that all answers appear correctly and are spelled correctly.
-        * Check to see if it is possible to type all the answers in one game (it's not :) ).
+* Quiz
+    * Check that the score counter counts correctly.
+    * Check that the game times out correctly.
+    * Check that the correct score is presented after the quiz.
+    * Check that the difficulty multiplier is correctly applied.
+    * Check that all answers appear correctly and are spelled correctly.
+    * Check to see if it is possible to type all the answers in one game (it's not :) ).
     
-    * Leaderboard
-        * Check that data is set to the database correctly.
-        * Check that data is retrieved from the database correctly.
+* Leaderboard
+    * Check that data is set to the database correctly.
+    * Check that data is retrieved from the database correctly.
 
 
 ## Bugs

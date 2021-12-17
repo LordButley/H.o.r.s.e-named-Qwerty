@@ -136,13 +136,13 @@ The initial ideas were taken from the structure planning and a process tree was 
 
 ### Difficulty and quiz theme choices
 
- - The quiz provides 3 different quiz types: Star Wars, Harry Potter and Periodic table of elements.
+ - The quiz provides 5 different quiz types: Star Wars, Harry Potter and Periodic table of elements, popular cheeses and populous countries.
  - You are asked to choose which you would like to play.
  - The difficulty setting is next requested. You can choose easy, normal or hard. Easy applies a 1* score multiplier, normal is 1.5* and hard is 2*. Additionally if you play on normal you have 3 lives, normal you have 2 and hard you have 1.
   - Incorrect input is captured and directed back to the user
 
-![Screen shot of the quiz choices](assets/images/themechoice.JPG) -->
-![Screen shot of the difficulty choices](assets/images/difficultychoice.JPG) -->
+![Screen shot of the quiz choices](assets/images/themechoice.JPG) 
+![Screen shot of the difficulty choices](assets/images/difficultychoice.JPG)
 
 ### Quiz
 
@@ -152,7 +152,7 @@ The initial ideas were taken from the structure planning and a process tree was 
 - After the quiz ends, you are shown your score
 - A menu is provided at the end of the quiz for continuation
 
-![Screen shot of the quiz](assets/images/quizpage.JPG) -->
+![Screen shot of the quiz](assets/images/quizpage.JPG)
 
 ### Data and Database
 
@@ -164,7 +164,7 @@ Data is sent from the app to the database (spreadsheets). The following table wa
 | Score      | score           | DecimalField |
 | Difficulty | difficulty      | CharField    |
 
-There are two sheets associated with the app. The first acts as a dump for all the data from the games that have been played. The second is generated from the first and order numerically allowing the top 5 to be taken. This is achieved using "=sort(Sheet1!A:C, 2, FALSE)" on the second spreadsheet.
+There are two sheets associated with the app. The first acts as a dump for all the data from the games that have been played. The second is generated from the first and is ordered numerically allowing the top 5 to be taken. This is achieved using "=sort(Sheet1!A:C, 2, FALSE)" on the second spreadsheet.
 
 ## Features to implement in the future
 
@@ -177,7 +177,7 @@ There are two sheets associated with the app. The first acts as a dump for all t
  ### Languages Used:
 
  1. [Python](https://en.wikipedia.org/wiki/Python) 
- - Programming language providing content and logic of project
+      - Programming language providing content and logic of project
  
  ### Frameworks, Libraries & Programs Used:
 

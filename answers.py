@@ -73,5 +73,6 @@ COUNTRIES = [
     "Argentina", "Algeria", "Sudan", "Ukraine", "Iraq",
     "Afghanistan", "Poland", "Canada", "Morocco",
     "Saudi Arabia", "Uzbekistan", "Peru", "Angola",
-    "Malaysia", "Mozambique", "Ghana", "Yemen", "Nepal"
+    "Malaysia", "Mozambique", "Ghana", "Yemen", "Nepal",
+    "Venezuela", "Madagascar", "Cameroon", "Australia"
 ]
