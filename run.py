@@ -3,8 +3,8 @@ Typekwondo
 Typing game with different themes of answers.
 User can set different difficulties which have an
 effect on their score. Scores are compiled in a
-google sheets db and a sorted version can be accessed
-for highscores
+google sheets database and a sorted version
+can be accessed for highscores
 '''
 
 import random
@@ -12,9 +12,10 @@ import os
 import time
 import string
 import gspread
-import answers
 from prettytable import PrettyTable
 from google.oauth2.service_account import Credentials
+import answers
+
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -42,7 +43,7 @@ print("\n")
 
 class User:
     '''
-    Creates an instance of User. A user object has 3 attributes which 
+    Creates an instance of User. A user object has 3 attributes which
     are name, score and difficulty. These correspond to the data required
     in the database.
     '''
@@ -82,6 +83,8 @@ class Quiz:
             print("1 - Star Wars")
             print("2 - Harry Potter")
             print("3 - Periodic table of elements")
+            print("4 - Popular Cheeses")
+            print("5 - Populous Countries")
             theme_selection = input(
                                 "Please enter the number of your choice: \n")
             if theme_selection == "1":
@@ -97,6 +100,14 @@ class Quiz:
                 answer_set = random.sample(
                                 answers.ELEMENTS, len(answers.ELEMENTS))
                 return answer_set
+            elif theme_selection == "4":
+                answer_set = random.sample(
+                                answers.CHEESE, len(answers.CHEESE))
+                return answer_set
+            elif theme_selection == "5":
+                answer_set = random.sample(
+                                answers.COUNTRIES, len(answers.COUNTRIES))
+                return answer_set
             else:
                 clear_screen()
                 print(f"You have entered {theme_selection}")
@@ -105,6 +116,8 @@ class Quiz:
     def select_difficulty(self):
         '''
         Function enabling user to select the difficulty of the game.
+        Selecting the difficulty changes the number of lives
+        a user has to play the game.
         '''
         while True:
             print("What difficulty would you like to play?")
@@ -283,4 +296,3 @@ def clear_screen():
 
 
 menu()
-

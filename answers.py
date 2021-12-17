@@ -47,3 +47,31 @@ HARRY_POTTER = [
     "Lumos", "Avada Kedavra", "Crucio", "Imperio"
     ]
 
+CHEESE = [
+    "Neufchatel", "Urda", "Beaufort", "Vacherin",
+    "Chaumes", "Old Amsterdam", "Caprino", "Colby Jack",
+    "Skyr", "Queso ChiHuaHua", "Fromage Frais",
+    "Colby", "Fromage Blanc", "Mato", "Mozzarella",
+    "Monterey Jack", "Oaxaca", "Taleggio", "Stracchino"
+    "Bocconcini", "Reblochon", "Pepper Jack", "Limburger",
+    "Cheshire", "Pecorino", "Manchego", "Grana Padano",
+    "Scamorza", "Asiago", "Fontina", "Comte", "Kasseri",
+    "Stilton", "Burrata", "Roquefort", "Gruyere",
+    "Halloumi", "Mascarpone", "Emmentaler", "Camembert",
+    "Gorgonzola", "Paneer", "Brie", "Gouda", "Parmiagiano",
+    "Ricotta", "Feta", "Cheddar",
+]
+
+COUNTRIES = [
+    "China", "India", "United States", "Indonesia",
+    "Pakistan", "Brazil", "Nigeria", "Bangladesh",
+    "Russia", "Mexico", "Japan", "Ethiopia", "Phillipines",
+    "Egypt", "Vietnam", "Congo", "Turkey", "Iran", "Germany",
+    "Thailand", "United Kingdom", "France", "Italy",
+    "Tanzania", "South Africa", "Myanmar", "Kenya",
+    "South Korea", "Colombia", "Spain", "Uganda",
+    "Argentina", "Algeria", "Sudan", "Ukraine", "Iraq",
+    "Afghanistan", "Poland", "Canada", "Morocco",
+    "Saudi Arabia", "Uzbekistan", "Peru", "Angola",
+    "Malaysia", "Mozambique", "Ghana", "Yemen", "Nepal"
+]

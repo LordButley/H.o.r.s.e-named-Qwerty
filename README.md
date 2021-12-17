@@ -2,15 +2,49 @@
 
 Welcome to TypeKwondo! 
 
-As all developers will tell you, being able to type quickly and accurately is an invaluable skill. Not staring at your index fingers whilst trying to work out where the missing semi-colon is actually really useful.
+As all developers will tell you, being able to type quickly and accurately is an invaluable skill. Not staring at your index fingers whilst trying to work out where the missing semi-colon is actually really useful!
 
-And what do developers love? Gamification! Introducing TypeKwondo, where you get to improve your typing skills, whilst competitively playing a typing game in a theme of your choosing. On top of this, you can also compare your scores with the leaderboard and try and make it into the top 5 best typers ever (*not an official title) 
+And what else do developers love? Gamification! Introducing TypeKwondo, where you get to improve your typing skills, whilst competitively playing a typing game in a theme of your choosing. On top of this, you can also compare your scores with the leaderboard and try and make it into the top 5 best typers ever (*not an official title) 
 
 You can visit the live website [here](https://typekwondo.herokuapp.com/)
 
 ![Landing terminal screen](assets/images/homepage.JPG)
 
 # Contents
+
+- [TypeKwondo!](#typekwondo-)
+- [Contents](#contents)
+- [UX](#ux)
+  * [Project Goals](#project-goals)
+  * [User Stories](#user-stories)
+  * [Target Audience](#target-audience)
+  * [Structure](#structure)
+  * [Skeleton](#skeleton)
+- [Features](#features)
+  * [Existing Features](#existing-features)
+    + [Home page and menu](#home-page-and-menu)
+    + [Leaderboard](#leaderboard)
+    + [How to play](#how-to-play)
+    + [Enter name](#enter-name)
+    + [Difficulty and quiz theme choices](#difficulty-and-quiz-theme-choices)
+    + [Quiz](#quiz)
+    + [Data and Database](#data-and-database)
+  * [Features to implement in the future](#features-to-implement-in-the-future)
+  * [Technologies Used](#technologies-used)
+    + [Languages Used:](#languages-used-)
+    + [Frameworks, Libraries & Programs Used:](#frameworks--libraries---programs-used-)
+  * [Testing](#testing)
+  * [Deployment](#deployment)
+    + [Heroku](#heroku)
+      - [How I deployed my project to Heroku.](#how-i-deployed-my-project-to-heroku)
+      - [Updating dependencies for Heroku deployment](#updating-dependencies-for-heroku-deployment)
+      - [Creating a Heroku App](#creating-a-heroku-app)
+      - [Input settings](#input-settings)
+      - [Deploy section](#deploy-section)
+      - [Forking a GitHub Repository](#forking-a-github-repository)
+  * [Credits](#credits)
+    + [Code](#code)
+    + [Thanks](#thanks)
 
 # UX
 
@@ -50,14 +84,15 @@ The program is designed to be quick and easy to play:
 
 - Welcome page - This contains a ASCII art title and the menu options.
 - How to play page - This provides details on how to play the game
-- Leaderboard page - This provides the a leaderboard of the top 5 userscores
+- Leaderboard page - This provides the a leaderboard of the top 5 highscores
 - Options pages - The user is given the choice of difficulty and question theme
 - Game page - The user is shown a word to type. The score and lives are shown after each question
 
 
 ## Skeleton
 
-The initial ideas were taken from the structure planning and a process tree was created using app.diagram.net [here.](assets/images/processtree.JPG). 
+The initial ideas were taken from the structure planning and a process tree was created using app.diagram.net 
+![Program process tree](assets/images/processtree.jpg). 
 
 # Features
 
@@ -82,14 +117,14 @@ The initial ideas were taken from the structure planning and a process tree was 
 - The data from the leaderboard is pulled from the googlesheets database.
 - You are also provided with the menu options.
 
-![Screen shot of the leaderboard of Typekondo](assets/images/leaderboard.JPG) -->
+![Screen shot of the leaderboard of Typekondo](assets/images/leaderboard.JPG)
 
 ### How to play
 
 - How to play explains the different elements of the game as well as the scoring structure
 - The menu options are also provided for continuation
 
-![Screen shot of the how to play section](assets/images/howto.JPG) -->
+![Screen shot of the how to play section](assets/images/howto.JPG)
 
 
 ### Enter name
@@ -230,7 +265,7 @@ To host on Heroku you must follow these steps:
 
 ### Code
 
-- Code lines 19 - 30 regarding connecting googlesheets APIs adapted from Code Institute LMS 
+- Code lines 20 - 31 in run.py regarding connecting googlesheets APIs adapted from Code Institute LMS 
 - Clear screen function code adapted from stackoverflow [here](https://stackoverflow.com/questions/2084508/clear-terminal-in-python)
 
 ### Thanks
